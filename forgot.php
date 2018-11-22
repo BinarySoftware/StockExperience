@@ -35,6 +35,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
   <title>Wyzeruj hasło</title>
   <?php include 'css/css.html'; ?>
 </head>

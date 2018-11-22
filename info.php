@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
   <title>StockExperience - Informacje</title>
   <?php include 'css/css.html'; ?>
 </head>
