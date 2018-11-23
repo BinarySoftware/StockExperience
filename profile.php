@@ -65,7 +65,7 @@ else {
     $USDPLN = explode('-', $actions_ar[37]);
     $GBPPLN = explode('-', $actions_ar[38]);
 
-	$htmlContent = file_get_contents("https://widgets.biznesradar.pl/grid/KGH_t-PKO_t-PKN_t-PZU_t-JSW_t-CCC_t-DNP_t-CDR_t-LTS_t-ALR_t-TPE_t-PEO_t-BZW_t-PGN_t-NTU_t-ENG_t-PGE_t-ENA_t-EUR_t-KRU_t-PKP_t-LPP_t-PLY_t-MIL_t-CPS_t-OPL_t-MBK_t-EAT_t-BMC_t-VST_t-GTC_t-BFT_t-MRB_t-11B_t-MAB_t-EURPLN_t-CHFPLN_t-USDPLN_t-GBPPLN_t");
+	$htmlContent = file_get_contents("https://widgets.biznesradar.pl/grid/KGH_t-PKO_t-PKN_t-PZU_t-JSW_t-CCC_t-DNP_t-CDR_t-LTS_t-ALR_t-TPE_t-PEO_t-SAN_t-PGN_t-NTU_t-ENG_t-PGE_t-ENA_t-EUR_t-KRU_t-PKP_t-LPP_t-PLY_t-MIL_t-CPS_t-OPL_t-MBK_t-EAT_t-BMC_t-VST_t-GTC_t-BFT_t-MRB_t-11B_t-MAB_t-EURPLN_t-CHFPLN_t-USDPLN_t-GBPPLN_t");
 	libxml_use_internal_errors(true);
 	$DOM = new DOMDocument();
 	$DOM->loadHTML($htmlContent);
@@ -3710,7 +3710,7 @@ else {
                     </form>
                 </tr>
                 <tr>
-                    <th style="width:50%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/BZW_t"></iframe></th>
+                    <th style="width:50%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/SAN_t"></iframe></th>
                     <form>
                         <td style="color:#ffffff">Masz: <?= $BZW[1] ?></td>
                     <th><input type="text" name="BZW" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
