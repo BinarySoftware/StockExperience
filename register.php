@@ -35,7 +35,7 @@ else { // Email doesn't already exist in a database, proceed...
         Witaj '.$first_name.',
         Dziękujemy za rejestracje!
         Kliknij w link aby aktywować konto:
-        https://stockexperience.000webhostapp.com/verify.php?email='.$email.'&hash='.$hash;  
+        https://stockexperiencepl.000webhostapp.com/verify.php?email='.$email.'&hash='.$hash;  
         mail( $to, $subject, $message_body );
         echo "<script type='text/javascript'> document.location = '/profile.php'; </script>";
     } else {

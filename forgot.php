@@ -26,7 +26,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
         $message_body = '
         Witaj '.$first_name.',
         Prosiłeś o możliwość wyzerowania hasła, oto twój link:
-        http://localhost/reset.php?email='.$email.'&hash='.$hash;  
+        http://stockexperiencepl.000webhostapp.com/reset.php?email='.$email.'&hash='.$hash;  
         mail($to, $subject, $message_body);
         echo "<script type='text/javascript'> document.location = '/success.php'; </script>";
   }

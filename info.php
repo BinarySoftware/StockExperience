@@ -40,6 +40,7 @@
     <br />
     <br />
     <h1>Changelog</h1>
+    <h4>V 1.9.9 (23.11) - Zmiany w indeksach, zmiana domeny, poprawki</h4>
     <h4>V 1.3.0 (11.05) - Aktualizacja zmiennych i treści, zmiana wizualnego aspektu systemu kupna/sprzedaży</h4>
     <h4>V 1.2.0 (09.05) - Dodanie przycisku "Odśwież" oraz strony "Informacje", aktualizacja zmiennych i treści</h4>
     <h4>V 1.1.0 (09.05) - Poprawa zauważonych błędów, naprawa układu strony oraz rzeczy wizualnych</h4>
