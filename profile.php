@@ -26,6 +26,11 @@ else {
         $actions_dict = $user['action_qty_dict'];
     $actions_ar = explode(',', $actions_dict); //Array of actions
     
+    $formattedActionsArray = [];
+    foreach ($actions_ar as &$value) {
+      array_push($formattedActionsArray, explode('-', $value));
+    }
+    print_r($formattedActionsArray);
     // TODO : Replace with foreach loop
     $KGH = explode('-', $actions_ar[0]);
     $PKO = explode('-', $actions_ar[1]);
@@ -85,7 +90,7 @@ else {
 	{
 		$aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
 	}
-	$KGHp = substr($aDataTableHeaderHTML[0], 7, 5);
+	  $KGHp = substr($aDataTableHeaderHTML[0], 7, 5);
     $PKOp = substr($aDataTableHeaderHTML[1], 7, 5);
     $PKNp = substr($aDataTableHeaderHTML[2], 7, 5);
     $PZUp = substr($aDataTableHeaderHTML[3], 7, 5);
