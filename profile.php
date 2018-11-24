@@ -26,11 +26,25 @@ else {
         $actions_dict = $user['action_qty_dict'];
     $actions_ar = explode(',', $actions_dict); //Array of actions
     
+    //This small chunk will get all data from "biznesradar", because there is no direct API for getting data from WSE/GPW :(
+    $address = "https://widgets.biznesradar.pl/grid/";
+    foreach ($actions_ar as &$value) {
+      $address .=  explode('-', $value)[0]; //Index name
+      $address .= "_t-"; //This is how "biznesradar" handles every query with URL
+    }
+    $htmlContent = file_get_contents($address);
+    libxml_use_internal_errors(true);
+    $DOM = new DOMDocument();
+    $DOM->loadHTML($htmlContent);
+    libxml_use_internal_errors(false);
+    
+    //This piece will loop through every single index and prepare how it's shown on the website
     $formattedActionsArray = [];
     foreach ($actions_ar as &$value) {
-      array_push($formattedActionsArray, explode('-', $value));
+      array_push($formattedActionsArray, explode('-', $value)); // Array(Array([0]index, [1]quantity)) etc.
     }
-    print_r($formattedActionsArray);
+    //print_r($formattedActionsArray);
+    
     // TODO : Replace with foreach loop
     $KGH = explode('-', $actions_ar[0]);
     $PKO = explode('-', $actions_ar[1]);
@@ -72,18 +86,6 @@ else {
     $USDPLN = explode('-', $actions_ar[37]);
     $GBPPLN = explode('-', $actions_ar[38]);
 
-  //This small chunk calculates how much money you have in every stock
-  $address = "https://widgets.biznesradar.pl/grid/";
-  foreach ($actions_ar as &$value) {
-    $address .=  explode('-', $value)[0];
-    $address .= "_t-";
-  }
-  $htmlContent = file_get_contents($address);
-
-	libxml_use_internal_errors(true);
-	$DOM = new DOMDocument();
-	$DOM->loadHTML($htmlContent);
-	libxml_use_internal_errors(false);
 	$Header = $DOM->getElementsByTagName('tr');
   //#Get header name of the table
 	foreach($Header as $NodeHeader) 
