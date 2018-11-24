@@ -11,8 +11,8 @@ function debug_to_console( $data ) {
 session_start();
 // Check if user is logged in using the session variable
 if ( $_SESSION['logged_in'] != 1 ) {
-  $_SESSION['message'] = "Nie wyświetlimy danych bez zalogowania!";
-  echo "<!DOCTYPE html><script type='text/javascript'> document.location = '/error.php'; </script>";
+    $_SESSION['message'] = "Nie wyświetlimy danych bez zalogowania!";
+    echo "<!DOCTYPE html><script type='text/javascript'> document.location = '/error.php'; </script>";
 }
 else {
     $email = $mysqli->escape_string($_SESSION['email']);
@@ -24,7 +24,9 @@ else {
         $active = $user['active'];
         $money = $user['money'];
         $actions_dict = $user['action_qty_dict'];
-    $actions_ar = explode(',', $actions_dict);
+    $actions_ar = explode(',', $actions_dict); //Array of actions
+    
+    // TODO : Replace with foreach loop
     $KGH = explode('-', $actions_ar[0]);
     $PKO = explode('-', $actions_ar[1]);
     $PKN = explode('-', $actions_ar[2]);
@@ -65,13 +67,20 @@ else {
     $USDPLN = explode('-', $actions_ar[37]);
     $GBPPLN = explode('-', $actions_ar[38]);
 
-	$htmlContent = file_get_contents("https://widgets.biznesradar.pl/grid/KGH_t-PKO_t-PKN_t-PZU_t-JSW_t-CCC_t-DNP_t-CDR_t-LTS_t-ALR_t-TPE_t-PEO_t-SAN_t-PGN_t-NTU_t-ENG_t-PGE_t-ENA_t-EUR_t-KRU_t-PKP_t-LPP_t-PLY_t-MIL_t-CPS_t-OPL_t-MBK_t-EAT_t-BMC_t-VST_t-GTC_t-BFT_t-MRB_t-11B_t-MAB_t-EURPLN_t-CHFPLN_t-USDPLN_t-GBPPLN_t");
+  //This small chunk calculates how much money you have in every stock
+  $address = "https://widgets.biznesradar.pl/grid/";
+  foreach ($actions_ar as &$value) {
+    $address .=  explode('-', $value)[0];
+    $address .= "_t-";
+  }
+  $htmlContent = file_get_contents($address);
+
 	libxml_use_internal_errors(true);
 	$DOM = new DOMDocument();
 	$DOM->loadHTML($htmlContent);
 	libxml_use_internal_errors(false);
 	$Header = $DOM->getElementsByTagName('tr');
-    //#Get header name of the table
+  //#Get header name of the table
 	foreach($Header as $NodeHeader) 
 	{
 		$aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
