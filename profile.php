@@ -51,6 +51,7 @@ else {
       $aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
     }
   
+    $totalMoneyInStocks = 0;
     foreach($formattedActionsArray as &$index) {
       //Checking current price for the given key
       $key = array_search($index, $formattedActionsArray);
@@ -151,7 +152,9 @@ else {
                   </div>";
       }
     }
+    $totalMoneyInStocks += floatval($price)*floatval($index[1]);
   }
+}
     //print_r($formattedActionsArray);
     
     // TODO : Replace with foreach loop
@@ -3669,7 +3672,6 @@ else {
     }
     }
     */
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -3688,8 +3690,8 @@ else {
           </table>
           <table width=100%>
             <tr>
-                <th width=25%><h4>Portfel: <?= $money ?> Zł</h4></th> 
-                <th><h4>Wartość akcji: <?= $KGH[1]*floatval($KGHp)+$PKO[1]*floatval($PKOp)+$PKN[1]*floatval($PKNp)+$PZU[1]*floatval($PZUp)+$JSW[1]*floatval($JSWp)+$CCC[1]*floatval($CCCp)+$DNP[1]*floatval($DNPp)+$CDR[1]*floatval($CDRp)+$LTS[1]*floatval($LTSp)+$ALR[1]*floatval($ALRp)+$TPE[1]*floatval($TPEp)+$PEO[1]*floatval($PEOp)+$BZW[1]*floatval($BZWp)+$PGN[1]*floatval($PGNp)+$GBK[1]*floatval($GBKp)+$ENG[1]*floatval($ENGp)+$PGE[1]*floatval($PGEp)+$ENA[1]*floatval($ENAp)+$EUR[1]*floatval($EURp)+$KRU[1]*floatval($KRUp)+$PKP[1]*floatval($PKPp)+$LPP[1]*floatval($LPPp)+$PLY[1]*floatval($PLYp)+$MIL[1]*floatval($MILp)+$CPS[1]*floatval($CPSp)+$OPL[1]*floatval($OPLp)+$MBK[1]*floatval($MBKp)+$EAT[1]*floatval($EATp)+$BMC[1]*floatval($BMCp)+$VST[1]*floatval($VSTp)+$GTC[1]*floatval($GTCp)+$BFT[1]*floatval($BFTp)+$MRB[1]*floatval($MRBp)+$llB[1]*floatval($llBp)+$MAB[1]*floatval($MABp)+$EURPLN[1]*floatval($EURPLNp)+$CHFPLN[1]*floatval($CHFPLNp)+$USDPLN[1]*floatval($USDPLNp)+$GBPPLN[1]*floatval($GBPPLNp) ?> Zł</h4></th> 
+                <th width=25%><h4>Twój portfel: <?= $money ?> Zł</h4></th> 
+                <th><h4>Wartość twoich akcji: <?= $totalMoneyInStocks?> Zł</h4></th> 
                 <th width=16% ><a href="logout.php"><button class="button-logout" name="logout"/>Wyloguj</button></a></th>
                 <th width=9% ><a href="info.php"><button class="button-logout" name="info"/>Info</button></a></th>
                 <th width=14% ><a href="profile.php"><button class="button-logout" name="odswiez"/>Odśwież</button></a></th>
@@ -3716,8 +3718,7 @@ else {
               die;
           } 
           ?>
-          <h5>Wszystkie Akcje</h5>
-          <table style="width:100%">
+          <table id="tableOfAllStocks" style="width:100%">
                 <tr>
                 <th style="width:25%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/KGH_t"></iframe></th>
                 <form>
@@ -3833,9 +3834,9 @@ else {
                     <th style="width:50%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/SAN_t"></iframe></th>
                     <form>
                         <td style="color:#ffffff">Masz: <?= $BZW[1] ?></td>
-                    <th><input type="text" name="BZW" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
-                    <td><button class="button-buy" name="BZWk">Kup</button></td>
-                    <td><button class="button-sell" name="BZWs">Sprzedaj</button></td>
+                    <th><input type="text" name="SAN" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
+                    <td><button class="button-buy" name="SANk">Kup</button></td>
+                    <td><button class="button-sell" name="SANs">Sprzedaj</button></td>
                     </form>
                 </tr>
                 <tr>
@@ -3851,9 +3852,9 @@ else {
                     <th style="width:50%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/NTU_t"></iframe></th>
                     <form>
                         <td style="color:#ffffff">Masz: <?= $GBK[1] ?></td>
-                    <th><input type="text" name="GBK" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
-                    <td><button class="button-buy" name="GBKk">Kup</button></td>
-                    <td><button class="button-sell" name="GBKs">Sprzedaj</button></td>
+                    <th><input type="text" name="GNB" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
+                    <td><button class="button-buy" name="GNBk">Kup</button></td>
+                    <td><button class="button-sell" name="GNBs">Sprzedaj</button></td>
                     </form>
                 </tr>
                 <tr>
