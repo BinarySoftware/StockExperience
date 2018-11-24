@@ -21,8 +21,21 @@ if ( $result->num_rows > 0 ) {
 }
 else { // Email doesn't already exist in a database, proceed...
     // active is 0 by DEFAULT (no need to include it here)
+    //Small forloop to make mainteneance easier in case of changes in stock indexes
+    $indexes = ["KGH","PKO","PKN","PZU","JSW","CCC","DNP","CDR","LTS","ALR","TPE","PEO","SAN","PGN","GNB","ENG","PGE","ENA","EUR","KRU","PKP","LPP","PLY","MIL","CPS","OPL","MBK","EAT","BMC","VST","GTC","BFT","MRB","11B","MAB","EURPLN","CHFPLN","USDPLN","GBPPLN"];
+    $listIndexValue = "";
+    $lastElement = end($indexes);
+    foreach ($indexes as &$index) {
+        $listIndexValue .= $index;
+        if($index == $lastElement) {
+            $listIndexValue .= "-0";
+        } else {
+            $listIndexValue .= "-0,";
+        }
+    }
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash, money, action_qty_dict) " 
-            . "VALUES ('$first_name','$last_name','$email','$password','$hash','100000','KGH-0,PKO-0,PKN-0,PZU-0,JSW-0,CCC-0,DNP-0,CDR-0,LTS-0,ALR-0,TPE-0,PEO-0,BZW-0,PGN-0,GBK-0,ENG-0,PGE-0,ENA-0,EUR-0,KRU-0,PKP-0,LPP-0,PLY-0,MIL-0,CPS-0,OPL-0,MBK-0,EAT-0,BMC-0,VST-0,GTC-0,BFT-0,MRB-0,11B-0,MAB-0,EURPLN-0,CHFPLN-0,USDPLN-0,GBPPLN-0')";
+    . "VALUES ('$first_name','$last_name','$email','$password','$hash','100000','$listIndexValue')";
+
     // Add user to the database
     if ( $mysqli->query($sql) ){
         $_SESSION['active'] = 0; //0 until user activates their account with verify.php
@@ -35,7 +48,7 @@ else { // Email doesn't already exist in a database, proceed...
         Witaj '.$first_name.',
         Dziękujemy za rejestracje!
         Kliknij w link aby aktywować konto:
-        https://stockexperience.000webhostapp.com/verify.php?email='.$email.'&hash='.$hash;  
+        https://stockexperiencepl.000webhostapp.com/verify.php?email='.$email.'&hash='.$hash;  
         mail( $to, $subject, $message_body );
         echo "<script type='text/javascript'> document.location = '/profile.php'; </script>";
     } else {

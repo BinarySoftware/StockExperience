@@ -1,8 +1,8 @@
 <?php
 //connection variables
-$host = '_';
-$user = '_';
-$password = '_';
+$host = 'your_host';
+$user = 'your_username';
+$password = 'your_password';
 //create mysql connection
 $mysqli = new mysqli($host,$user,$password);
 if ($mysqli->connect_errno) {
@@ -15,7 +15,7 @@ if ( !$mysqli->query('CREATE DATABASE accounts') ) {
 }
 //create users table with all the fields
 $mysqli->query('
-CREATE TABLE `table_name_here`.`users` 
+CREATE TABLE `db_name_here`.`users` 
 (
     `id` INT NOT NULL AUTO_INCREMENT,
     `first_name` VARCHAR(50) NOT NULL,
