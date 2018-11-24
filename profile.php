@@ -156,7 +156,26 @@ else {
   }
 }
     //TODO: create modal elements while creating backend for them (inherently) - easier to maintain for example 10000 indexes, not like 39 here
-    /*$KGH = explode('-', $actions_ar[0]);
+    /*
+    
+    Use this as reusable
+
+    <tr>
+    <th style="width:25%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/KGH_t"></iframe></th>
+    <form>
+        <th rowspan="39" style="width:5%"></th>
+        <td style="color:#ffffff; width:20%">Masz: <?php echo $KGH[1]; ?></td>
+    <th style="width:15%"><input type="text" name="KGH" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
+    <th rowspan="39" style="width:5%"></th>
+        <td><button class="button-buy" name="KGHk">Kup</button></td>
+    <th rowspan="39" style="width:5%"></th>
+        <td><button class="button-sell" name="KGHs">Sprzedaj</button></td>
+        </form>
+    </tr>
+    
+    
+    
+    $KGH = explode('-', $actions_ar[0]);
     $PKO = explode('-', $actions_ar[1]);
     $PKN = explode('-', $actions_ar[2]);
     $PZU = explode('-', $actions_ar[3]);
