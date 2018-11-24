@@ -43,10 +43,119 @@ else {
     foreach ($actions_ar as &$value) {
       array_push($formattedActionsArray, explode('-', $value)); // Array(Array([0]index, [1]quantity)) etc.
     }
+
+    $Header = $DOM->getElementsByTagName('tr');
+    //#Get header name of the table
+    foreach($Header as $NodeHeader) 
+    {
+      $aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
+    }
+  
+    foreach($formattedActionsArray as &$index) {
+      //Checking current price for the given key
+      $key = array_search($index, $formattedActionsArray);
+      if (strlen($index[0]) == 3) {
+        $price = substr($aDataTableHeaderHTML[$key], 7, 5);
+      } else {
+        $price = substr($aDataTableHeaderHTML[$key], 10, 5);
+      }
+
+      //Buy index
+      if ( isset( $_GET[$index[0].'k'] ) ) { // retrieve the form data by using the element's name attributes value as key 
+        $ilosc = $_GET[$index[0]]; // display the results 
+        if (floatval($ilosc) > 0) { //if the qty given is higher than 0
+            if (floatval($price)*floatval($ilosc) <= floatval($money)) { //if person has enough money to buy it
+                $money = floatval($money) - floatval($price)*floatval($ilosc);
+                $index[1] = floatval($index[1]) + floatval($ilosc);
+                $actions_ar[$key] = implode("-", $index);
+                $actions_dict = implode(",", $actions_ar);
+                $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
+                if ( $mysqli->query($sql) ) {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Pomyslnie zakupiono akcje</h3>
+                            </div>
+                          </div>";
+                } else {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
+                            </div>
+                          </div>";
+                }
+            } else {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Za mało środków na koncie, transakcja odrzucona</h3>
+                            </div>
+                          </div>";
+                }
+        } else {
+            echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                    <!-- Modal content -->
+                    <div class=\"modal-content\">
+                      <span class=\"close\">x</span>
+                      <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>
+                    </div>
+                  </div>";
+        }
+      //sell index
+      } elseif ( isset( $_GET[$index[0].'s'] ) ) {
+        $ilosc = $_GET[$index[0]];
+        if (floatval($ilosc) > 0) {
+            if (floatval($ilosc) <= floatval($index[1])) {
+                $money = floatval($money) + floatval($price)*floatval($ilosc);
+                $index[1] = floatval($index[1]) - floatval($ilosc);
+                $actions_ar[$key] = implode("-", $index);
+                $actions_dict = implode(",", $actions_ar);
+                $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
+                if ( $mysqli->query($sql) ) {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Pomyslnie sprzedano akcje</h3>
+                            </div>
+                          </div>";
+                } else {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
+                            </div>
+                          </div>";
+                }
+            } else {
+                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                            <!-- Modal content -->
+                            <div class=\"modal-content\">
+                              <span class=\"close\">x</span>
+                              <h3 style='color:#000000'>Za mało akcji, transakcja odrzucona</h3>
+                            </div>
+                          </div>";
+                }
+        } else {
+            echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
+                    <!-- Modal content -->
+                    <div class=\"modal-content\">
+                      <span class=\"close\">x</span>
+                      <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>
+                    </div>
+                  </div>";
+      }
+    }
+  }
     //print_r($formattedActionsArray);
     
     // TODO : Replace with foreach loop
-    $KGH = explode('-', $actions_ar[0]);
+    /*$KGH = explode('-', $actions_ar[0]);
     $PKO = explode('-', $actions_ar[1]);
     $PKN = explode('-', $actions_ar[2]);
     $PZU = explode('-', $actions_ar[3]);
@@ -86,12 +195,6 @@ else {
     $USDPLN = explode('-', $actions_ar[37]);
     $GBPPLN = explode('-', $actions_ar[38]);
 
-	$Header = $DOM->getElementsByTagName('tr');
-  //#Get header name of the table
-	foreach($Header as $NodeHeader) 
-	{
-		$aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
-	}
 	  $KGHp = substr($aDataTableHeaderHTML[0], 7, 5);
     $PKOp = substr($aDataTableHeaderHTML[1], 7, 5);
     $PKNp = substr($aDataTableHeaderHTML[2], 7, 5);
@@ -3565,6 +3668,7 @@ else {
 </div>";
     }
     }
+    */
 }
 ?>
 <!DOCTYPE html>
@@ -3970,30 +4074,30 @@ else {
                 </tr>
             </table>
     </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-modal.style.display = "block";
+    modal.style.display = "block";
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
         modal.style.display = "none";
     }
-}
-</script>
 
-<script src="js/index.js"></script>
-<h5>C2018 Maciej Mikołajek. Wszelkie prawa zastrzeżone. Wersja 1.2.0 (09.05.18)</h5>
-</body>
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+    <script src="js/index.js"></script>
+    <h5>C2018 Maciej Mikołajek. Wszelkie prawa zastrzeżone. Wersja 1.2.0 (09.05.18)</h5>
+  </body>
 </html>
