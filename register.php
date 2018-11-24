@@ -21,19 +21,21 @@ if ( $result->num_rows > 0 ) {
 }
 else { // Email doesn't already exist in a database, proceed...
     // active is 0 by DEFAULT (no need to include it here)
-    $indexes = array("KGH","PKO","PKN","PZU","JSW","CCC","DNP","CDR","LTS","ALR","TPE","PEO","SAN","PGN","GNB","ENG","PGE","ENA","EUR","KRU","PKP","LPP","PLY","MIL","CPS","OPL","MBK","EAT","BMC","VST","GTC","BFT","MRB","11B","MAB","EURPLN","CHFPLN","USDPLN","GBPPLN");
+    //Small forloop to make mainteneance easier in case of changes in stock indexes
+    $indexes = ["KGH","PKO","PKN","PZU","JSW","CCC","DNP","CDR","LTS","ALR","TPE","PEO","SAN","PGN","GNB","ENG","PGE","ENA","EUR","KRU","PKP","LPP","PLY","MIL","CPS","OPL","MBK","EAT","BMC","VST","GTC","BFT","MRB","11B","MAB","EURPLN","CHFPLN","USDPLN","GBPPLN"];
     $listIndexValue = "";
     $lastElement = end($indexes);
     foreach ($indexes as &$index) {
-            $listIndexValue .= $index;
-            if($index == $lastElement) {
-                $listIndexValue .= "-0";
+        $listIndexValue .= $index;
+        if($index == $lastElement) {
+            $listIndexValue .= "-0";
         } else {
             $listIndexValue .= "-0,";
         }
-      }
+    }
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash, money, action_qty_dict) " 
-            . "VALUES ('$first_name','$last_name','$email','$password','$hash','$listIndexValue')";
+    . "VALUES ('$first_name','$last_name','$email','$password','$hash','100000','$listIndexValue')";
+
     // Add user to the database
     if ( $mysqli->query($sql) ){
         $_SESSION['active'] = 0; //0 until user activates their account with verify.php
