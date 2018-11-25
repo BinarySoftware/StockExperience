@@ -10,8 +10,8 @@ html {
 
 body {
   min-width:700px;
-  background: #c1bdba;
-  font-family: helvetica;
+  background: #fafafa;
+  font-family: 'Open Sans';
 }
 
 a {
@@ -33,46 +33,9 @@ a:hover {
   box-shadow: 0 8px 20px 8px rgba(19, 35, 47, 0.3);
 }
 
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-.tab-group li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #1ab188;
-  color: #ffffff;
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #fafafa;
   font-weight: 300;
   margin: 0 0 0 0;
 }
@@ -86,19 +49,19 @@ h2 {
 
 h3 {
   text-align: center;
-  color: #ffffff;
+  color: #fafafa;
   font-weight: 200;
   margin: 0 0 0 0;
 }
 
 h4 {
     text-align: left;
-    color: #ffffff;
+    color: #fafafa;
 }
 
 h5 {
     text-align: center;
-    color: #ffffff;
+    color: #fafafa;
 }
 
 span {
@@ -108,66 +71,24 @@ span {
 
 p {
     text-align: center;
-    color: #ffffff;
+    color: #fafafa;
     margin: 0px 0px 50px 0px;
 }
 
-div.info {
-    color: pink;
-    display: box;
-    text-align: center;
-    padding: 5px;
-    margin-top: -20px;
-    margin-bottom: 15px;
-    border: 1px solid red;
-    background: #66131c;
-}
-
-label {
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-}
-label .req {
-  margin: 2px;
-  color: #1ab188;
-}
-
-label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-label.active .req {
-  opacity: 0;
-}
-
-label.highlight {
-  color: #ffffff;
-}
-
 input, textarea {
-  font-size: 22px;
+  font-size: 18px;
   display: block;
   width: 100%;
-  height: 100%;
+  height: 90%;
   padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #ffffff;
-  border-radius: 0;
+  background: rgba(19, 35, 47, 0.49);
+  border: 0;
+  color: #fafafa;
+  border-radius: 1px;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
+
 input:focus, textarea:focus {
   outline: 0;
   border-color: #1ab188;
@@ -178,36 +99,17 @@ textarea {
   resize: vertical;
 }
 
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.top-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.top-row > div {
-  float: left;
-  width: 48%;
-  margin-right: 4%;
-}
-.top-row > div:last-child {
-  margin: 0;
-}
-
 .button {
   border: 0;
   outline: none;
-  border-radius: 0;
+  border-radius: 1px;
   padding: 15px 0;
   font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
   background: #1ab188;
-  color: #ffffff;
+  color: #fafafa;
   transition: all 0.5s ease;
 }
 .button:hover, .button:focus {
@@ -222,43 +124,55 @@ textarea {
 .button-logout {
   border: 0;
   outline: none;
-  border-radius: 0;
+  border-radius: 1px;
   font-size: 1rem;
   font-weight: normal;
   padding: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   background: #1ab188;
-  color: #ffffff;
+  color: #fafafa;
   float: right;
   transition: all 0.5s ease;
   display: block;
 }
 
+.button-logout:hover {
+  background: #179b77;
+}
+
 .button-buy {
   border: none;
-  outline:none;
-  border-radius:0;
-  width:50px; 
-  font-size:12px;
+  outline: none;
+  border-radius: 1px;
+  width: 50px; 
+  font-size: 12px;
   letter-spacing: 1px;
-  text-transform:uppercase;
-  background:#1ab188;
-  color:#ffffff;
+  text-transform: uppercase;
+  background: #1ab188;
+  color: #fafafa;
   float: none;
+}
+
+.button-buy:hover {
+  background: #179b77;
 }
 
 .button-sell{
   border: none;
-  outline:none;
-  border-radius:0;
-  width:90px; 
-  font-size:12px;
+  outline: none;
+  border-radius: 1px;
+  width: 90px; 
+  font-size: 12px;
   letter-spacing: 1px;
-  text-transform:uppercase;
-  background:#ff4d4d;
-  color:#ffffff;
+  text-transform: uppercase;
+  background: #ff4d4d;
+  color: #fafafa;
   float: none;
+}
+
+.button-sell:hover {
+  background: #d13f3f;
 }
 
 .forgot {
