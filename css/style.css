@@ -10,8 +10,8 @@ html {
 
 body {
   min-width:700px;
-  background: #c1bdba;
-  font-family: helvetica;
+  background: #fafafa;
+  font-family: 'Open Sans';
 }
 
 a {
@@ -235,6 +235,10 @@ textarea {
   display: block;
 }
 
+.button-logout:hover {
+  background: #179b77;
+}
+
 .button-buy {
   border: none;
   outline:none;
@@ -248,6 +252,10 @@ textarea {
   float: none;
 }
 
+.button-buy:hover {
+  background: #179b77;
+}
+
 .button-sell{
   border: none;
   outline:none;
@@ -259,6 +267,10 @@ textarea {
   background:#ff4d4d;
   color:#ffffff;
   float: none;
+}
+
+.button-sell:hover {
+  background: #d13f3f;
 }
 
 .forgot {
