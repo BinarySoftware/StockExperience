@@ -212,7 +212,7 @@ else {
 
                 if ($key == 0) {
                   echo '<tr>
-                  <th style="width:25%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
+                  <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
                       <th rowspan="'.$length.'" style="width:5%"></th>
                       <td style="color:#ffffff; width:20%">Masz: '.$index[1].'</td>
@@ -227,7 +227,7 @@ else {
                   echo '<tr>
                   <th style="width:25%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
-                      <td style="color:#ffffff; width:20%">Masz: '.$index[1].'</td>
+                      <td style="color:#ffffff; width:30%">Masz: '.$index[1].'</td>
                       <th style="width:15%"><input type="text" name="'.$index[0].'" style="height:18px; padding:0px; font-size:13px" placeholder="Ilosc"></th>
                       <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
                       <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
