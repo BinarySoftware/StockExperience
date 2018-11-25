@@ -258,6 +258,6 @@ else {
     }
     </script>
     <script src="js/index.js"></script>
-    <h5>C2018 Maciej Mikołajek. Wszelkie prawa zastrzeżone. Wersja 1.9.0 (25.11.18)</h5>
+    <h5 style="color:rgba(19, 35, 47, 0.9)">Ⓒ 2018 Maciej Mikołajek. Wszelkie prawa zastrzeżone. Wersja 2.0 Beta2</h5>
   </body>
 </html>
