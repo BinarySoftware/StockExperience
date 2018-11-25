@@ -76,11 +76,9 @@ p {
 }
 
 input, textarea {
-  font-size: 18px;
   display: block;
   width: 100%;
-  height: 90%;
-  padding: 5px 10px;
+  padding: 1px 7px;
   background: rgba(19, 35, 47, 0.49);
   border: 0;
   color: #fafafa;
