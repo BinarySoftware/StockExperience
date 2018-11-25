@@ -205,15 +205,18 @@ table {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fafafa;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 2px;
     width: 80%;
 }
 
 /* The Close Button */
 .close {
+    position: relative;
+    transform: translate(0, -30%);
     color: #aaaaaa;
     float: right;
     font-size: 28px;
