@@ -176,9 +176,9 @@ else {
           </table>
           <table width=100%>
             <tr>
-                <th width=27%><h4>Twój portfel: <?= floor($money * 100) / 100 ?> Zł</h4></th> 
+                <td width=27%><p style="margin:0">Twój portfel: <?= floor($money * 100) / 100 ?> Zł</p></td> 
                 <th style="width:1%"></th>
-                <th><h4>Wartość twoich akcji: <?= floor($totalMoneyInStocks * 100) / 100?> Zł</h4></th> 
+                <td><p style="margin:0">Wartość twoich akcji: <?= floor($totalMoneyInStocks * 100) / 100?> Zł</p></td> 
                 <th width=16% ><a href="logout.php"><button class="button-logout" name="logout"/>Wyloguj</button></a></th>
                 <th width=9% ><a href="info.php"><button class="button-logout" name="info"/>Info</button></a></th>
                 <th width=14% ><a href="profile.php"><button class="button-logout" name="odswiez"/>Odśwież</button></a></th>
