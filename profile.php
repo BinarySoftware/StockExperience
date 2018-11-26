@@ -209,13 +209,18 @@ else {
               foreach($formattedActionsArray as &$index) {
                 $key = array_search($index, $formattedActionsArray);
                 $length = count($formattedActionsArray) + 1;
+                if (strlen($index[0]) == 3) {
+                  $price = substr($aDataTableHeaderHTML[$key], 7, 5);
+                } else {
+                  $price = substr($aDataTableHeaderHTML[$key], 10, 5);
+                }
 
                 if ($key == 0) {
                   echo '<tr>
                   <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
                       <th rowspan="'.$length.'" style="width:5%"></th>
-                      <td style="color:#ffffff; width:20%">Masz: '.$index[1].'</td>
+                      <td style="color:#ffffff; width:20%">Masz: '.$index[1].' ('.$index[1]*$price.'zł)</td>
                       <th style="width:15%"><input type="text" name="'.$index[0].'" style="padding: 1px 7px;" placeholder="Ilosc"></th>
                       <th rowspan="'.$length.'" style="width:5%"></th>
                       <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
@@ -227,7 +232,7 @@ else {
                   echo '<tr>
                   <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
-                      <td style="color:#ffffff; width:20%">Masz: '.$index[1].'</td>
+                      <td style="color:#ffffff; width:20%">Masz: '.$index[1].' ('.$index[1]*$price.'zł)</td>
                       <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$index[0].'" placeholder="Ilosc"></th>
                       <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
                       <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
