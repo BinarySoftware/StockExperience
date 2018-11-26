@@ -247,6 +247,8 @@ else {
                     </form>
                   </tr>';
                 }
+
+                //HERE: Add Detailed <tr></tr> with show/hide triangle
               }
             ?>
           </table>
