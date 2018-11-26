@@ -23,6 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 <body>
   <div class="form">
+      <table width=100%>
+        <tr>
+            <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
+            <td><h1>StockExperience Poland</h1></td> 
+        </tr>
+      </table>
       <ul class="tab-group">
         <li class="tab"><a href="#signup">Zarejestruj</a></li>
         <li class="tab active"><a href="#login">Zaloguj</a></li>
