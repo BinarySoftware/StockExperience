@@ -24,17 +24,8 @@ This repository is licensed under the
 [LICENSE](https://github.com/BinarySoftware/StockExperience/blob/Master/LICENSE) file. 
 
 Please be aware that, as the commercial backing for StockExperience, 
-**reserves the right under the CLA to use 
-contributions made to this repository as part of commercially available 
-product.** 
+**reserves the right to use contributions made to this repository 
+as part of commercially available product.** 
 
 If these terms are unacceptable to you, please do not contribute to the 
 repository.
-
-### The Contributor License Agreement
-As part of your first contribution to this repository, you need to accept the 
-Contributor License Agreement. You will automatically be asked to sign the CLA 
-when you make your first pull request. 
-
-Any work intentionally submitted for inclusion in StockExperience shall be licensed under
-this CLA.
