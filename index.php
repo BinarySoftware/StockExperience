@@ -76,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             </label>
             <input type="password"required autocomplete="off" name='password'/>
           </div>
+          <p>Klikając "Zarejestruj" zgadzasz się na przetwarzanie Twoich danych osobowych oraz akceptujesz <a href="terms.php">regulamin</a></p>
           <button type="submit" class="button button-block" name="register" />Zarejestruj</button>
           </form>
         </div>  
