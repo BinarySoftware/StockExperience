@@ -176,8 +176,8 @@ else {
           </table>
           <table width=100%>
             <tr>
-                <th width=25%><h4>Twój portfel: <?= $money ?> Zł</h4></th> 
-                <th><h4>Wartość twoich akcji: <?= $totalMoneyInStocks?> Zł</h4></th> 
+                <th width=25%><h4>Twój portfel: <?= floor($money * 100) / 100 ?> Zł</h4></th> 
+                <th><h4>Wartość twoich akcji: <?= floor($totalMoneyInStocks * 100) / 100?> Zł</h4></th> 
                 <th width=16% ><a href="logout.php"><button class="button-logout" name="logout"/>Wyloguj</button></a></th>
                 <th width=9% ><a href="info.php"><button class="button-logout" name="info"/>Info</button></a></th>
                 <th width=14% ><a href="profile.php"><button class="button-logout" name="odswiez"/>Odśwież</button></a></th>
@@ -216,7 +216,8 @@ else {
                 }
 
                 if ($index[1] != 0) {
-                  $quantityAndMoneyInIndex = 'Masz: '.$index[1].' ('.$index[1]*$price.'zł)';
+                  $valueInIndex = floor($index[1]*$price * 100) / 100;
+                  $quantityAndMoneyInIndex = 'Masz: '.$index[1].' ('.$valueInIndex.'zł)';
                 } else {
                   $quantityAndMoneyInIndex = 'Masz: '.$index[1];
                 }
@@ -226,7 +227,7 @@ else {
                   <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
                       <th rowspan="'.$length.'" style="width:1%"></th>
-                      <td style="color:#ffffff; width:20%">'.$quantityAndMoneyInIndex.'</td>
+                      <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
                       <th style="width:15%"><input type="text" name="'.$index[0].'" style="padding: 1px 7px;" placeholder="Ilosc"></th>
                       <th rowspan="'.$length.'" style="width:1%"></th>
                       <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
@@ -238,7 +239,7 @@ else {
                   echo '<tr>
                   <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
                     <form>
-                      <td style="color:#ffffff; width:20%">'.$quantityAndMoneyInIndex.'</td>
+                      <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
                       <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$index[0].'" placeholder="Ilosc"></th>
                       <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
                       <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
