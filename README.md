@@ -16,9 +16,7 @@ Should you add anything, please dont hesitate contacting me.
 Check it out : https://stockexperiencepl.000webhostapp.com
 
 ## Contributing to StockExperience
-If you are interested in contributing, please read the 
-[`CONTRIBUTING.md`](https://github.com/BinarySoftware/StockExperience/blob/Master/CONTRIBUTING.md)
-file.
+If you are interested in contributing, please fork this repository and then just create pull request. And there is no step three :)
 
 ## License
 This repository is licensed under the
