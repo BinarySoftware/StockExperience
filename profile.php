@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require 'db.php';
 function debug_to_console( $data ) {
     $output = $data;
