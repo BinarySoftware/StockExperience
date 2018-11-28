@@ -92,6 +92,15 @@ require 'IndexBackend.php';
                 }
 
                 //HERE: Add Detailed <tr></tr> with show/hide triangle
+                /*
+                  echo '
+                  <tr>
+                    <th style="width:100%">
+                      <iframe scrolling="no" style="width:100%" height=100px frameborder=0 src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe>
+                    </th>
+                  </tr>
+                  ';
+                */
               }
             ?>
           </table>
