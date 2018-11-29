@@ -1,7 +1,7 @@
 <?php
-/* Displays all error messages */
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@ session_start();
     <h1>Błąd</h1>
     <p>
     <?php 
+    //If there is possibility to write message, do it, else get back to start page
     if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
         echo $_SESSION['message'];    
     else:

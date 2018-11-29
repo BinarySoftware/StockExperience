@@ -1,8 +1,7 @@
 <?php
-/* Reset your password form, sends reset.php password link */
 require 'db.php';
 session_start();
-// Check if form submitted with method="post"
+
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
     $email = $mysqli->escape_string($_POST['email']);
@@ -32,6 +31,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

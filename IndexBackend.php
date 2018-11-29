@@ -1,6 +1,5 @@
 <?php
-error_reporting(0);
-require 'db.php';
+/* Displays user information and some useful messages - debugging only
 function debug_to_console( $data ) {
     $output = $data;
     if ( is_array( $output ) )
@@ -8,8 +7,11 @@ function debug_to_console( $data ) {
 
     echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
 }
-/* Displays user information and some useful messages */
+*/
+error_reporting(0);
+require 'db.php';
 session_start();
+
 // Check if user is logged in using the session variable
 if ( $_SESSION['logged_in'] != 1 ) {
     $_SESSION['message'] = "Nie wyświetlimy danych bez zalogowania!";
