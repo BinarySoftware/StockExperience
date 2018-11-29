@@ -1,4 +1,5 @@
 <?php
+// Load backend for indexes
 require 'IndexBackend.php';
 ?>
 
@@ -66,6 +67,8 @@ require 'IndexBackend.php';
                   $quantityAndMoneyInIndex = 'Masz: '.$index[1];
                 }
 
+                // Loading each index from backend to table
+                // the if is for table general look, to make nice spacing
                 if ($key == 0) {
                   echo '<tr>
                   <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
@@ -90,23 +93,13 @@ require 'IndexBackend.php';
                     </form>
                   </tr>';
                 }
-
-                //HERE: Add Detailed <tr></tr> with show/hide triangle
-                /*
-                  echo '
-                  <tr>
-                    <th style="width:100%">
-                      <iframe scrolling="no" style="width:100%" height=100px frameborder=0 src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe>
-                    </th>
-                  </tr>
-                  ';
-                */
               }
             ?>
           </table>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
+    // Script for running the pop-up informing about buying/selling
     // Get the modal
     var modal = document.getElementById('myModal');
     modal.style.display = "block";
