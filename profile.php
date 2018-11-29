@@ -97,6 +97,9 @@ require 'IndexBackend.php';
             ?>
           </table>
     </div>
+    <div class="form">
+      <h1>Podsumowanie twoich poczynań</h1>
+    </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
     // Script for running the pop-up informing about buying/selling
