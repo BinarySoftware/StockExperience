@@ -1,8 +1,8 @@
 <?php
-/* Main page with two forms: sign up and log in */
-require 'db.php';
+require 'backend/db.php';
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +11,14 @@ session_start();
   <?php include 'css/css.html'; ?>
 </head>
 <?php
+//Check request method and prepare for registering and logging in
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-    if (isset($_POST['login'])) { //user logging in
-        require 'login.php';
+    if (isset($_POST['login'])) { 
+        require 'backend/login.php';
     }
-    elseif (isset($_POST['register'])) { //user registering
-        require 'register.php';
+    elseif (isset($_POST['register'])) {
+        require 'backend/register.php';
     }
 }
 ?>
@@ -86,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           <button type="submit" class="button button-block" name="register" />Zarejestruj</button>
           </form>
         </div>  
-      </div><!-- tab-content -->
-</div> <!-- /form -->
+      </div>
+</div> 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="js/index.js"></script>
 </body>

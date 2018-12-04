@@ -2,6 +2,7 @@
 /* Displays all successful messages */
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
