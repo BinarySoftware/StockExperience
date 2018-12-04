@@ -101,10 +101,10 @@ require 'backend/profileBackend.php';
       <?php
         $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
         if ($totalMoney > 100000) {
-          echo '<h3>Dotychczas zarobiłeś'.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</h3>
+          echo '<h5>Dotychczas zarobiłeś '.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</h5>
           <h3>Graj tak dalej!</h3>';
         } else {
-          echo '<h3>Dotychczas straciłeś'.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</h3>
+          echo '<h5>Dotychczas straciłeś '.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</h5>
           <h3>Zmień taktykę!</h3>';
         }
       ?>
