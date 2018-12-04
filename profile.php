@@ -98,6 +98,16 @@ require 'backend/profileBackend.php';
     </div>
     <div class="form">
       <h1>Podsumowanie twoich poczynań</h1>
+      <?php
+        $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
+        if ($totalMoney > 100000) {
+          echo '<h3>Dotychczas zarobiłeś'.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</h3>
+          <h3>Graj tak dalej!</h3>';
+        } else {
+          echo '<h3>Dotychczas straciłeś'.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</h3>
+          <h3>Zmień taktykę!</h3>';
+        }
+      ?>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
