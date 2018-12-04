@@ -15,7 +15,7 @@ session_start();
 // Check if user is logged in using the session variable
 if ( $_SESSION['logged_in'] != 1 ) {
     $_SESSION['message'] = "Nie wyświetlimy danych bez zalogowania!";
-    echo "<!DOCTYPE html><script type='text/javascript'> document.location = '/error.php'; </script>";
+    echo "<!DOCTYPE html><script type='text/javascript'> document.location = '../error.php'; </script>";
 }
 else {
     $email = $mysqli->escape_string($_SESSION['email']);

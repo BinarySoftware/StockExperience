@@ -16,7 +16,7 @@ $hash = $mysqli->escape_string( md5( rand(0,1000) ) );
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
 if ( $result->num_rows > 0 ) {
     $_SESSION['message'] = 'Uzytkownik z takim mailem już istnieje!';
-    echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+    echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
 }
 else { 
     // active is 0 by DEFAULT
@@ -47,12 +47,12 @@ else {
         Witaj '.$first_name.',
         Dziękujemy za rejestracje!
         Kliknij w link aby aktywować konto:
-        https://stockexperiencepl.000webhostapp.com/verify.php?email='.$email.'&hash='.$hash;  
+        https://stockexperiencepl.000webhostapp.com/backend/verify.php?email='.$email.'&hash='.$hash;  
         mail( $to, $subject, $message_body );
-        echo "<script type='text/javascript'> document.location = '/profile.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../profile.php'; </script>";
     } else {
         $_SESSION['message'] = 'Błąd rejestracji!';
-        echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }
 }
 ?>

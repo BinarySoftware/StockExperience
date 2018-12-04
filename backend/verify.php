@@ -14,18 +14,18 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     if ( $result->num_rows == 0 )
     { 
         $_SESSION['message'] = "Konto już zostało aktywowane lub błędny link";
-        echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }
     else {
         $_SESSION['message'] = "Konto aktywne!";
         // Set the user status to active (active = 1)
         $mysqli->query("UPDATE users SET active='1' WHERE email='$email'") or die($mysqli->error);
         $_SESSION['active'] = 1;
-        echo "<script type='text/javascript'> document.location = '/success.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../success.php'; </script>";
     }
 }
 else {
     $_SESSION['message'] = "Nieprawidłowe wartości podane dla weryfikacji konta!";
-    echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+    echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
 }     
 ?>

@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'backend/db.php';
 session_start();
 ?>
 
@@ -15,10 +15,10 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     if (isset($_POST['login'])) { 
-        require 'login.php';
+        require 'backend/login.php';
     }
     elseif (isset($_POST['register'])) {
-        require 'register.php';
+        require 'backend/register.php';
     }
 }
 ?>

@@ -1,6 +1,5 @@
 <?php
-// Load backend for indexes
-require 'IndexBackend.php';
+require 'backend/profileBackend.php';
 ?>
 
 <!DOCTYPE html>

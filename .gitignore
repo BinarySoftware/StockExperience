@@ -80,5 +80,4 @@ cobertura.xml
 # End of https://www.gitignore.io/api/macos,linux,windows,vapor
 
 #files
-db.php
-sql/sql_import.php
+backend/db.php

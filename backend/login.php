@@ -5,7 +5,7 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
      $_SESSION['message'] = "Użytkownik z takim adresem nie istnieje!";
-    echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+    echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
 }
 else { // User exists
     $user = $result->fetch_assoc();
@@ -18,11 +18,11 @@ else { // User exists
         $_SESSION['action_qty_dict'] = $user['action_qty_dict'];
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;
-        echo "<script type='text/javascript'> document.location = '/profile.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../profile.php'; </script>";
     }
     else {
         $_SESSION['message'] = "Błędne hasło!";
-        echo "<script type='text/javascript'> document.location = '/error.php'; </script>";
+        echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }
 }
 ?>
