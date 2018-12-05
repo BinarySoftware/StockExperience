@@ -17,13 +17,15 @@
     <br />
     <h2>Witamy pasjonatów ekonomii!</h2>
     <h3>Aplikacja powstała jako jedna z pierwszych na rynku programów edukacyjnych aplikacji służących do inwestowania w papiery wartościowe. Jest też pierwszym tego typu programem obsługującym indeksy GPW</h3>
-    <br />
+  </div>
+  <div class="form">
     <h1>O Twórcy</h1>
     <h2>Maciej Mikołajek - Senior Software Developer - <a href="https://github.com/BinarySoftware/">@BinarySoftware</a></h2>
     <h4>Uczeń klasy o profilu matematyczno-fizycznym w III Społecznym Liceum Ogólnokształcącym w Krakowie. Samodzielnie rozwija swoją pasję - programowanie, od 9 rż. Jest autorem wielu projektów, w tym systemu hotelarskiego, aplikacji dla dealerów samochodów, wielu witryn i rozwiązań informatycznych. Dwukrotny laureat OI. Oprócz ewidentnych pasji wokół przedmiotów ścisłych uwielbia sporty indywidualne - w szczególności narciarstwo, którego jest instruktorem.</h4>
     <h3>Proszę o zadawanie pytań oraz raportowania błędów czy informowanie o chęci współpracy</h3>
     <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">https://github.com/BinarySoftware/StockExperience/</a></h3>
-    <br />
+  </div>
+  <div class="form">
     <h1>Changelog</h1>
     <h4>2 (SuperNova) - Poprawa logo, oddzielenie backendu od frontendu, podsumowanie poczynań, refaktoryzacja, Regulamin+RODO</h4>
     <h4>2(B3) (26.11) - Dodano informacje o wartości posiadanych indeksów, Nowe logo, Regulamin strony </h4>
