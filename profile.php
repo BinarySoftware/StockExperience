@@ -54,6 +54,10 @@ require 'backend/profileBackend.php';
           $name = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[0];
           $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
           $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
+          $color = "red";
+          if ($change >= 0) {
+            $color = "green";
+          }
           $lastUpdate = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[3];
 
           $quantityOFIndexes = $index[1];
@@ -69,7 +73,10 @@ require 'backend/profileBackend.php';
           // the if is for table general look, to make nice spacing
           if ($key == 0) {
             echo '<tr>
-            <th style="width:30%">toREPLACE</iframe></th>
+              <th style="width:8%">'.$name.'</th>
+              <th style="width:10%">'.$price.'</th>
+              <th style="width:8%; color:'.$color.'">'.$change.'</th>
+              <th style="width:4%; font-size: 6px">'.$lastUpdate.'</th>
               <form>
                 <th rowspan="'.$length.'" style="width:1%"></th>
                 <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
@@ -82,7 +89,10 @@ require 'backend/profileBackend.php';
             </tr>';
           } else {
             echo '<tr>
-            <th style="width:30%">toREPLACE</th>
+              <th style="width:8%">'.$name.'</th>
+              <th style="width:10%">'.$price.'</th>
+              <th style="width:8%; color:'.$color.'">'.$change.'</th>
+              <th style="width:4%; font-size: 6px">'.$lastUpdate.'</th>
               <form>
                 <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
                 <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$name.'" placeholder="Ilosc"></th>
