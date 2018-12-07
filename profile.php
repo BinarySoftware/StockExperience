@@ -69,7 +69,7 @@ require 'backend/profileBackend.php';
           // the if is for table general look, to make nice spacing
           if ($key == 0) {
             echo '<tr>
-            <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
+            <th style="width:30%">toREPLACE</iframe></th>
               <form>
                 <th rowspan="'.$length.'" style="width:1%"></th>
                 <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
@@ -118,7 +118,7 @@ require 'backend/profileBackend.php';
     var span = document.getElementsByClassName("close")[0];
 
     // Check if modal exists
-    if (typeof modal != "undefined") {
+    if (modal != null) {
       modal.style.display = "block";
     }
 
