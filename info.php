@@ -27,7 +27,8 @@
   </div>
   <div class="form">
     <h1>Changelog</h1>
-    <h4>2 (SuperNova) - Poprawa logo, oddzielenie backendu od frontendu, podsumowanie poczynań, refaktoryzacja, Regulamin+RODO</h4>
+    <h4>2(B5) (07.12) - Performance: 53x mniejszy plik, 7,3x szybsze ładowanie, dodane narzędzia deweloperskie</h4>
+    <h4>2(B4) (04.12) - Poprawa logo, oddzielenie backendu od frontendu, podsumowanie poczynań, refaktoryzacja, Regulamin</h4>
     <h4>2(B3) (26.11) - Dodano informacje o wartości posiadanych indeksów, Nowe logo, Regulamin strony </h4>
     <h4>2(B2) (25.11) - Zmiana wyglądu strony, nowy CSS</h4>
     <h4>2(B1) (24.11) - Zmiana całego parsera, refaktoryzacja, poprawa stabilności</h4>
