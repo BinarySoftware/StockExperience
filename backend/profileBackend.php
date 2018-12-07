@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 require 'db.php';
+require 'debug.php';
 session_start();
 
 // Check if user is logged in using the session variable
