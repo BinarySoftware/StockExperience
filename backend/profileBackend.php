@@ -1,15 +1,7 @@
 <?php
-/* Displays user information and some useful messages - debugging only
-function debug_to_console( $data ) {
-    $output = $data;
-    if ( is_array( $output ) )
-        $output = implode( ',', $output);
-
-    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
-}
-*/
 error_reporting(0);
 require 'db.php';
+// require 'debug.php';
 session_start();
 
 // Check if user is logged in using the session variable
@@ -53,16 +45,12 @@ else {
     {
       $aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
     }
-  
+
     $totalMoneyInStocks = 0;
     foreach($formattedActionsArray as &$index) {
       //Checking current price for the given key
       $key = array_search($index, $formattedActionsArray);
-      if (strlen($index[0]) == 3) {
-        $price = substr($aDataTableHeaderHTML[$key], 7, 5);
-      } else {
-        $price = substr($aDataTableHeaderHTML[$key], 10, 5);
-      }
+      $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
 
       //Buy index
       if ( isset( $_GET[$index[0].'k'] ) ) { // retrieve the form data by using the element's name attributes value as key 
@@ -75,16 +63,14 @@ else {
                 $actions_dict = implode(",", $actions_ar);
                 $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
                 if ( $mysqli->query($sql) ) {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Pomyslnie zakupiono akcje</h3>
                             </div>
                           </div>";
                 } else {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
@@ -92,8 +78,7 @@ else {
                           </div>";
                 }
             } else {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Za mało środków na koncie, transakcja odrzucona</h3>
@@ -101,8 +86,7 @@ else {
                           </div>";
                 }
         } else {
-            echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                    <!-- Modal content -->
+            echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                     <div class=\"modal-content\">
                       <span class=\"close\">x</span>
                       <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>
@@ -120,16 +104,14 @@ else {
                 $actions_dict = implode(",", $actions_ar);
                 $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
                 if ( $mysqli->query($sql) ) {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Pomyslnie sprzedano akcje</h3>
                             </div>
                           </div>";
                 } else {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
@@ -137,8 +119,7 @@ else {
                           </div>";
                 }
             } else {
-                    echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                            <!-- Modal content -->
+                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">   
                             <div class=\"modal-content\">
                               <span class=\"close\">x</span>
                               <h3 style='color:#000000'>Za mało akcji, transakcja odrzucona</h3>
@@ -146,8 +127,7 @@ else {
                           </div>";
                 }
         } else {
-            echo "<!DOCTYPE html><div id=\"myModal\", class=\"modal\">
-                    <!-- Modal content -->
+            echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">                
                     <div class=\"modal-content\">
                       <span class=\"close\">x</span>
                       <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>

@@ -50,45 +50,55 @@ require 'backend/profileBackend.php';
         foreach($formattedActionsArray as &$index) {
           $key = array_search($index, $formattedActionsArray);
           $length = count($formattedActionsArray);
-          if (strlen($index[0]) == 3) {
-            $price = substr($aDataTableHeaderHTML[$key], 7, 5);
-          } else {
-            $price = substr($aDataTableHeaderHTML[$key], 10, 5);
-          }
 
-          if ($index[1] != 0) {
-            $valueInIndex = floor($index[1]*$price * 100) / 100;
-            $quantityAndMoneyInIndex = 'Masz: '.$index[1].' ('.$valueInIndex.'zł)';
-          } else {
-            $quantityAndMoneyInIndex = 'Masz: '.$index[1];
+          $name = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[0];
+          $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
+          $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
+          $color = "red";
+          if ($change >= 0) {
+            $color = "lightgreen";
           }
+          $lastUpdate = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[3];
 
-          // Loading each index from backend to table
-          // the if is for table general look, to make nice spacing
+          $quantityOFIndexes = $index[1];
+
+          if ($quantityOFIndexes != 0) {
+            $valueInIndex = floor($quantityOFIndexes*$price * 100) / 100;
+            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes.' ('.$valueInIndex.' zł)';
+          } else {
+            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes;
+          }
+          
+          echo '<tr>
+            <td style="color:#fafafa; width:8%">'.$name.'</td>';
           if ($key == 0) {
-            echo '<tr>
-            <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
-              <form>
-                <th rowspan="'.$length.'" style="width:1%"></th>
-                <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
-                <th style="width:15%"><input type="text" name="'.$index[0].'" style="padding: 1px 7px;" placeholder="Ilosc"></th>
-                <th rowspan="'.$length.'" style="width:1%"></th>
-                <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
-                <th rowspan="'.$length.'" style="width:1%"></th>
-                <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
-              </form>
-            </tr>';
-          } else {
-            echo '<tr>
-            <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
-              <form>
-                <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
-                <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$index[0].'" placeholder="Ilosc"></th>
-                <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
-                <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
-              </form>
-            </tr>';
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
           }
+          echo '<td style="color:#fafafa; width:9%">'.$price.'</td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="width:8%; color:'.$color.'">'.$change.'</td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="color:#fafafa; width:4%; font-size:9px; font-weight:100">'.$lastUpdate.'</td>
+            <form>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="color:#fafafa; width:30%">'.$quantityAndMoneyInIndex.'</td>
+            <th style="width:15%"><input type="text" name="'.$name.'" style="padding: 1px 7px;" placeholder="Ilosc"></th>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td><button class="button-buy" name="'.$name.'k">Kup</button></td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td><button class="button-sell" name="'.$name.'s">Sprzedaj</button></td>
+            </form>
+            </tr>';
         }
       ?>
     </table>
@@ -98,10 +108,10 @@ require 'backend/profileBackend.php';
       <?php
         $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
         if ($totalMoney > 100000) {
-          echo '<h5>Dotychczas zarobiłeś '.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</h5>
+          echo '<p style="margin-bottom: 20px">Dotychczas zarobiłeś '.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</p>
           <h3>Graj tak dalej!</h3>';
         } else {
-          echo '<h5>Dotychczas straciłeś '.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</h5>
+          echo '<p style="margin-bottom: 20px">Dotychczas straciłeś '.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</p>
           <h3>Zmień taktykę!</h3>';
         }
       ?>
@@ -110,26 +120,29 @@ require 'backend/profileBackend.php';
     <script>
     // Script for running the pop-up informing about buying/selling
     // Get the modal
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById('ActionSendWindow');
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    modal.style.display = "block";
+    // Check if modal exists
+    if (modal != null) {
+      modal.style.display = "block";
+  
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+   }
     </script>
     <script src="js/index.js"></script>
-    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience Ⓒ2018 BinarySoftware. Wszelkie prawa zastrzeżone.</h5>
+    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2018 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
   </body>
 </html>
