@@ -64,7 +64,7 @@ require 'backend/profileBackend.php';
 
           if ($quantityOFIndexes != 0) {
             $valueInIndex = floor($quantityOFIndexes*$price * 100) / 100;
-            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes.' ('.$valueInIndex.'zł)';
+            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes.' ('.$valueInIndex.' zł)';
           } else {
             $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes;
           }
@@ -143,6 +143,6 @@ require 'backend/profileBackend.php';
    }
     </script>
     <script src="js/index.js"></script>
-    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience Ⓒ2018 BinarySoftware. Wszelkie prawa zastrzeżone.</h5>
+    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2018 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
   </body>
 </html>
