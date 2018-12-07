@@ -46,15 +46,14 @@ else {
       $aDataTableHeaderHTML[] = trim($NodeHeader->textContent);
     }
   
+    console_log($aDataTableHeaderHTML);
+    
     $totalMoneyInStocks = 0;
     foreach($formattedActionsArray as &$index) {
       //Checking current price for the given key
       $key = array_search($index, $formattedActionsArray);
-      if (strlen($index[0]) == 3) {
-        $price = substr($aDataTableHeaderHTML[$key], 7, 5);
-      } else {
-        $price = substr($aDataTableHeaderHTML[$key], 10, 5);
-      }
+      $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
+      console_log($price);
 
       //Buy index
       if ( isset( $_GET[$index[0].'k'] ) ) { // retrieve the form data by using the element's name attributes value as key 
