@@ -50,17 +50,19 @@ require 'backend/profileBackend.php';
         foreach($formattedActionsArray as &$index) {
           $key = array_search($index, $formattedActionsArray);
           $length = count($formattedActionsArray);
-          if (strlen($index[0]) == 3) {
-            $price = substr($aDataTableHeaderHTML[$key], 7, 5);
-          } else {
-            $price = substr($aDataTableHeaderHTML[$key], 10, 5);
-          }
 
-          if ($index[1] != 0) {
-            $valueInIndex = floor($index[1]*$price * 100) / 100;
-            $quantityAndMoneyInIndex = 'Masz: '.$index[1].' ('.$valueInIndex.'zł)';
+          $name = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[0];
+          $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
+          $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
+          $lastUpdate = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[3];
+
+          $quantityOFIndexes = $index[1];
+
+          if ($quantityOFIndexes != 0) {
+            $valueInIndex = floor($quantityOFIndexes*$price * 100) / 100;
+            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes.' ('.$valueInIndex.'zł)';
           } else {
-            $quantityAndMoneyInIndex = 'Masz: '.$index[1];
+            $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes;
           }
 
           // Loading each index from backend to table
@@ -71,21 +73,21 @@ require 'backend/profileBackend.php';
               <form>
                 <th rowspan="'.$length.'" style="width:1%"></th>
                 <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
-                <th style="width:15%"><input type="text" name="'.$index[0].'" style="padding: 1px 7px;" placeholder="Ilosc"></th>
+                <th style="width:15%"><input type="text" name="'.$name.'" style="padding: 1px 7px;" placeholder="Ilosc"></th>
                 <th rowspan="'.$length.'" style="width:1%"></th>
-                <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
+                <td><button class="button-buy" name="'.$name.'k">Kup</button></td>
                 <th rowspan="'.$length.'" style="width:1%"></th>
-                <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
+                <td><button class="button-sell" name="'.$name.'s">Sprzedaj</button></td>
               </form>
             </tr>';
           } else {
             echo '<tr>
-            <th style="width:30%"><iframe scrolling="no" style="width:100%" height=25 frameborder="0" src="https://widgets.biznesradar.pl/grid/'.$index[0].'_t"></iframe></th>
+            <th style="width:30%">toREPLACE</th>
               <form>
                 <td style="color:#ffffff; width:30%">'.$quantityAndMoneyInIndex.'</td>
-                <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$index[0].'" placeholder="Ilosc"></th>
-                <td><button class="button-buy" name="'.$index[0].'k">Kup</button></td>
-                <td><button class="button-sell" name="'.$index[0].'s">Sprzedaj</button></td>
+                <th style="width:15%"><input type="text" style="padding: 1px 7px;" name="'.$name.'" placeholder="Ilosc"></th>
+                <td><button class="button-buy" name="'.$name.'k">Kup</button></td>
+                <td><button class="button-sell" name="'.$name.'s">Sprzedaj</button></td>
               </form>
             </tr>';
           }
@@ -110,12 +112,15 @@ require 'backend/profileBackend.php';
     <script>
     // Script for running the pop-up informing about buying/selling
     // Get the modal
-    var modal = document.getElementById('myModal');
+    var modal = document.getElementById('ActionSendWindow');
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    modal.style.display = "block";
+    // Check if modal exists
+    if (typeof modal != "undefined") {
+      modal.style.display = "block";
+    }
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
