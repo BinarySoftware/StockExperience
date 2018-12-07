@@ -56,7 +56,7 @@ require 'backend/profileBackend.php';
           $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
           $color = "red";
           if ($change >= 0) {
-            $color = "green";
+            $color = "lightgreen";
           }
           $lastUpdate = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[3];
 
@@ -74,15 +74,15 @@ require 'backend/profileBackend.php';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
           }
-          echo '<td style="color:#fafafa; width:10%">'.$price.'</td>';
+          echo '<td style="color:#fafafa; width:9%">'.$price.'</td>';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
           }
-          echo '<td style="width:7%; color:'.$color.'">'.$change.'</td>';
+          echo '<td style="width:8%; color:'.$color.'">'.$change.'</td>';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
           }
-          echo '<td style="color:#fafafa; width:5%; font-size: 10px">'.$lastUpdate.'</td>
+          echo '<td style="color:#fafafa; width:4%; font-size:9px; font-weight:100">'.$lastUpdate.'</td>
             <form>';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
