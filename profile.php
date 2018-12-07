@@ -70,10 +70,19 @@ require 'backend/profileBackend.php';
           }
           
           echo '<tr>
-            <th style="color:#fafafa; width:8%">'.$name.'</th>
-            <td style="color:#fafafa; width:10%">'.$price.'</td>
-            <td style="width:7%; color:'.$color.'">'.$change.'</td>
-            <td style="color:#fafafa; width:5%; font-size: 10px">'.$lastUpdate.'</td>
+            <td style="color:#fafafa; width:8%">'.$name.'</td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="color:#fafafa; width:10%">'.$price.'</td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="width:7%; color:'.$color.'">'.$change.'</td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="color:#fafafa; width:5%; font-size: 10px">'.$lastUpdate.'</td>
             <form>';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
