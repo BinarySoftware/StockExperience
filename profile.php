@@ -68,31 +68,28 @@ require 'backend/profileBackend.php';
           } else {
             $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes;
           }
-
-          // Loading each index from backend to table
-          // the if is for table general look, to make nice spacing
-
-            echo '<tr>
-              <th style="color:#fafafa; width:8%">'.$name.'</th>
-              <th style="color:#fafafa; width:10%">'.$price.'</th>
-              <th style="width:8%; color:'.$color.'">'.$change.'</th>
-              <th style="color:#fafafa; width:4%; font-size: 8px">'.$lastUpdate.'</th>
-              <form>';
-            if ($key == 0) {
-              echo '<th rowspan="'.$length.'" style="width:1%"></th>';
-            }
-            echo '<td style="color:#fafafa; width:30%">'.$quantityAndMoneyInIndex.'</td>
-              <th style="width:15%"><input type="text" name="'.$name.'" style="padding: 1px 7px;" placeholder="Ilosc"></th>';
-            if ($key == 0) {
-              echo '<th rowspan="'.$length.'" style="width:1%"></th>';
-            }
-            echo '<td><button class="button-buy" name="'.$name.'k">Kup</button></td>';
-            if ($key == 0) {
-              echo '<th rowspan="'.$length.'" style="width:1%"></th>';
-            }
-            echo '<td><button class="button-sell" name="'.$name.'s">Sprzedaj</button></td>
-              </form>
-              </tr>';
+          
+          echo '<tr>
+            <th style="color:#fafafa; width:8%">'.$name.'</th>
+            <th style="color:#fafafa; width:10%">'.$price.'</th>
+            <th style="width:8%; color:'.$color.'">'.$change.'</th>
+            <th style="color:#fafafa; width:4%; font-size: 8px">'.$lastUpdate.'</th>
+            <form>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td style="color:#fafafa; width:30%">'.$quantityAndMoneyInIndex.'</td>
+            <th style="width:15%"><input type="text" name="'.$name.'" style="padding: 1px 7px;" placeholder="Ilosc"></th>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td><button class="button-buy" name="'.$name.'k">Kup</button></td>';
+          if ($key == 0) {
+            echo '<th rowspan="'.$length.'" style="width:1%"></th>';
+          }
+          echo '<td><button class="button-sell" name="'.$name.'s">Sprzedaj</button></td>
+            </form>
+            </tr>';
         }
       ?>
     </table>
