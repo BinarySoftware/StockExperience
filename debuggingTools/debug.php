@@ -1,11 +1,20 @@
 <?php
-/* Displays user information and some useful messages - debugging only */
-function debug_to_console( $data ) {
-    $output = $data;
-    if ( is_array( $output ) ) {
-        $output = implode( ',', $output);
+
+function console_log( $data ){
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
+
+function console_log_messages( ...$messages ){
+    $msgs = '';
+    foreach ($messages as $msg) {
+        $msgs .= json_encode($msg);
     }
-    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+
+    echo '<script>';
+    echo 'console.log('. json_encode($msgs) .')';
+    echo '</script>';
 }
 
 ?>
