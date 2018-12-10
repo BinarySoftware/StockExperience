@@ -33,6 +33,7 @@
     <h4>Uczeń klasy o profilu matematyczno-fizycznym w III Społecznym Liceum Ogólnokształcącym w Krakowie. Samodzielnie rozwija swoją pasję - programowanie, od 9 rż. Jest autorem wielu projektów, w tym systemu hotelarskiego, aplikacji dla dealerów samochodów, wielu witryn i rozwiązań informatycznych. Dwukrotny laureat OI. Oprócz ewidentnych pasji wokół przedmiotów ścisłych uwielbia sporty indywidualne - w szczególności narciarstwo, którego jest instruktorem.</h4>
     <h3>Proszę o zadawanie pytań oraz raportowania błędów czy informowanie o chęci współpracy</h3>
     <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">GitHub - StockExperience</a></h3>
+    <h3>Dane pobrane z serwisu <a href="https://www.biznesradar.pl">BiznesRadar</a></h3>
   </div>
   <div class="form">
     <h1>Changelog</h1>
