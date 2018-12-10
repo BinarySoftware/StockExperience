@@ -70,7 +70,7 @@ require 'backend/profileBackend.php';
           }
           
           echo '<tr>
-            <td style="color:#fafafa; width:8%">'.$name.'</td>';
+            <td style="color:#fafafa; width:8%"><a href="https://www.biznesradar.pl/notowania/'.$name.'">'.$name.'</a></td>';
           if ($key == 0) {
             echo '<th rowspan="'.$length.'" style="width:1%"></th>';
           }
@@ -104,14 +104,15 @@ require 'backend/profileBackend.php';
     </table>
   </div>
     <div class="form">
-      <h1>Podsumowanie twoich poczynań</h1>
+      <h1>Podsumowanie twojej gry od początku</h1>
       <?php
+        echo '<p style="margin-bottom: 20px">Na początku miałeś 100 000 zł</p>';
         $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
         if ($totalMoney > 100000) {
-          echo '<p style="margin-bottom: 20px">Dotychczas zarobiłeś '.($totalMoney-100000).', co przekłada się na wzrost o '.(($totalMoney-100000)/1000).'%</p>
+          echo '<p style="margin-bottom: 20px">Dotychczas zarobiłeś '.(floor(($totalMoney-100000) * 100) / 100).', co przekłada się na wzrost o '.((floor(($totalMoney-100000) * 100) / 100)/1000).'%</p>
           <h3>Graj tak dalej!</h3>';
         } else {
-          echo '<p style="margin-bottom: 20px">Dotychczas straciłeś '.(($totalMoney-100000)*(-1)).', co przekłada się na spadek o '.(($totalMoney-100000)/1000).'%</p>
+          echo '<p style="margin-bottom: 20px">Dotychczas straciłeś '.(floor(($totalMoney-100000) * -100) / 100).', co przekłada się na spadek o '.((floor(($totalMoney-100000) * 100) / 100)/1000).'%</p>
           <h3>Zmień taktykę!</h3>';
         }
       ?>
