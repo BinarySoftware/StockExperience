@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/BinarySoftware/StockExperience/blob/master/icon.png" style="margin: 0 auto;">
+<img src="https://github.com/BinarySoftware/StockExperience/blob/master/iconBig.png" style="margin: 0 auto;">
 </p>
 
 <h1 align="center">StockExperience</h1>
