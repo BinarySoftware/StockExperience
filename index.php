@@ -27,12 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <table width=100%>
       <tr>
           <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
-          <td><h1>StockExperience</h1></td> 
+          <td><h1>StockExperience Poland</h1></td> 
       </tr>
     </table>
     </br>
     <h2>Witamy pasjonatów ekonomii!</h2>
     <h3>StockExperience to program edukacyjny, uczący inwestowania w papiery wartościowe. Jest też pierwszą aplikacją obsługującą indeksy GPW. Zapraszam do gry!</h3>
+    </br>
   </div>
   <div class="form">
       <ul class="tab-group">
