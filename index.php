@@ -30,10 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           <td><h1>StockExperience Poland</h1></td> 
       </tr>
     </table>
-    </br>
-    <h2>Witamy pasjonatów ekonomii!</h2>
-    <h3>StockExperience to program edukacyjny, uczący inwestowania w papiery wartościowe. Jest też pierwszą aplikacją obsługującą indeksy GPW. Zapraszam do gry!</h3>
-    </br>
+    <h2 style="margin:10px 0">Witamy pasjonatów ekonomii!</h2>
+    <h3 style="margin:10px 0">StockExperience to program edukacyjny, uczący inwestowania w papiery wartościowe. Jest też pierwszą aplikacją obsługującą indeksy GPW. Zapraszam do gry!</h3>
   </div>
   <div class="form">
       <ul class="tab-group">
@@ -42,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       </ul>
       <div class="tab-content">
          <div id="login">   
-          <h1>Witaj!</h1>
           <form action="index.php" method="post" autocomplete="off">
             <div class="field-wrap">
             <label>
@@ -61,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           </form>
         </div>
         <div id="signup">   
-          <h1>Zarejestruj w serwisie</h1>
           <form action="index.php" method="post" autocomplete="off">
           <div class="top-row">
             <div class="field-wrap">
