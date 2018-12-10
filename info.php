@@ -18,13 +18,13 @@
   </div>
   <div class="form">
     <h1>Jak używać StockExperience</h1>
-    </br>
-    <p style="margin:0; text-align:left">Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</p>
-    <p style="margin:0; text-align:left">Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</p>
-    <p style="margin:0; text-align:left">Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</p>
-    <p style="margin:0; text-align:left">Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</p>
-    <p style="margin:0; text-align:left">Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</p>
-    </br>
+    <ol>
+    <li style="margin:0; text-align:left; color:#fafafa">Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</li>
+    <li style="margin:0; text-align:left; color:#fafafa">Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</p>
+    <li style="margin:0; text-align:left; color:#fafafa">Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</p>
+    <li style="margin:0; text-align:left; color:#fafafa">Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</p>
+    <li style="margin:0; text-align:left; color:#fafafa">Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</p>
+    </ol>
     <h2>Jak widać, używanie aplikacji nie jest skomplikowane. Zatem - do roboty!</h2>
   </div>
   <div class="form">
