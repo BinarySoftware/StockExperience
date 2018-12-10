@@ -11,22 +11,33 @@
             <tr>
                 <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
                 <th><h1>Informacje</h1></th> 
-                <th width=40% ><a href="profile.php"><button class="button-logout" name="comeback"/>Powrót do strony głównej</button></a></th>
+                <th width=18% ><a href="profile.php"><button class="button-logout" name="comeback"/>Powrót</button></a></th>
+                <th width=18% ><a href="terms.php"><button class="button-logout" name="terms"/>Regulamin</button></a></th>
             </tr>
           </table>
-    <br />
-    <h2>Witamy pasjonatów ekonomii!</h2>
-    <h3>Aplikacja powstała jako jedna z pierwszych na rynku programów edukacyjnych aplikacji służących do inwestowania w papiery wartościowe. Jest też pierwszym tego typu programem obsługującym indeksy GPW</h3>
+  </div>
+  <div class="form">
+    <h1>Jak używać StockExperience</h1>
+    <ol>
+    <li style="margin:0; text-align:left; color:#fafafa">Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</li>
+    <li style="margin:0; text-align:left; color:#fafafa">Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</li>
+    <li style="margin:0; text-align:left; color:#fafafa">Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</li>
+    <li style="margin:0; text-align:left; color:#fafafa">Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</li>
+    <li style="margin:0; text-align:left; color:#fafafa">Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</li>
+    </ol>
+    <h2>Jak widać, używanie aplikacji nie jest skomplikowane. Zatem - do roboty!</h2>
   </div>
   <div class="form">
     <h1>O Twórcy</h1>
     <h2>Maciej Mikołajek - Senior Software Developer - <a href="https://github.com/BinarySoftware/">@BinarySoftware</a></h2>
     <h4>Uczeń klasy o profilu matematyczno-fizycznym w III Społecznym Liceum Ogólnokształcącym w Krakowie. Samodzielnie rozwija swoją pasję - programowanie, od 9 rż. Jest autorem wielu projektów, w tym systemu hotelarskiego, aplikacji dla dealerów samochodów, wielu witryn i rozwiązań informatycznych. Dwukrotny laureat OI. Oprócz ewidentnych pasji wokół przedmiotów ścisłych uwielbia sporty indywidualne - w szczególności narciarstwo, którego jest instruktorem.</h4>
     <h3>Proszę o zadawanie pytań oraz raportowania błędów czy informowanie o chęci współpracy</h3>
-    <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">https://github.com/BinarySoftware/StockExperience/</a></h3>
+    <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">GitHub - StockExperience</a></h3>
+    <h3>Dane pobrane z serwisu <a href="https://www.biznesradar.pl">BiznesRadar</a></h3>
   </div>
   <div class="form">
     <h1>Changelog</h1>
+    <h4>2(B6) (10.12) - Zmiany w stronie informacyjnej i logowania, poprawki w stylach, testy pre-release, SEO</h4>
     <h4>2(B5) (07.12) - Performance: 53x mniejszy plik, 7,3x szybsze ładowanie, dodane narzędzia deweloperskie</h4>
     <h4>2(B4) (04.12) - Poprawa logo, oddzielenie backendu od frontendu, podsumowanie poczynań, refaktoryzacja, Regulamin</h4>
     <h4>2(B3) (26.11) - Dodano informacje o wartości posiadanych indeksów, Nowe logo, Regulamin strony </h4>
