@@ -11,16 +11,26 @@
             <tr>
                 <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
                 <th><h1>Informacje</h1></th> 
-                <th width=40% ><a href="profile.php"><button class="button-logout" name="comeback"/>Powrót do strony głównej</button></a></th>
+                <th width=18% ><a href="profile.php"><button class="button-logout" name="comeback"/>Powrót</button></a></th>
+                <th width=18% ><a href="terms.php"><button class="button-logout" name="terms"/>Regulamin</button></a></th>
             </tr>
           </table>
+  </div>
+  <div class="form">
+    <h1>Jak używać StockExperience</h1>
+    <h3>Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</h3>
+    <h3>Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</h3>
+    <h3>Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</h3>
+    <h3>Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</h3>
+    <h3>Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</h3>
+    <h2>Jak widać, używanie aplikacji nie jest skomplikowane. Zatem - do roboty!</h2>
   </div>
   <div class="form">
     <h1>O Twórcy</h1>
     <h2>Maciej Mikołajek - Senior Software Developer - <a href="https://github.com/BinarySoftware/">@BinarySoftware</a></h2>
     <h4>Uczeń klasy o profilu matematyczno-fizycznym w III Społecznym Liceum Ogólnokształcącym w Krakowie. Samodzielnie rozwija swoją pasję - programowanie, od 9 rż. Jest autorem wielu projektów, w tym systemu hotelarskiego, aplikacji dla dealerów samochodów, wielu witryn i rozwiązań informatycznych. Dwukrotny laureat OI. Oprócz ewidentnych pasji wokół przedmiotów ścisłych uwielbia sporty indywidualne - w szczególności narciarstwo, którego jest instruktorem.</h4>
     <h3>Proszę o zadawanie pytań oraz raportowania błędów czy informowanie o chęci współpracy</h3>
-    <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">https://github.com/BinarySoftware/StockExperience/</a></h3>
+    <h3>Projekt rozwijany na GitHubie: <a href="https://github.com/BinarySoftware/StockExperience/">GitHub - StockExperience</a></h3>
   </div>
   <div class="form">
     <h1>Changelog</h1>
