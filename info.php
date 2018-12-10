@@ -14,9 +14,6 @@
                 <th width=40% ><a href="profile.php"><button class="button-logout" name="comeback"/>Powrót do strony głównej</button></a></th>
             </tr>
           </table>
-    <br />
-    <h2>Witamy pasjonatów ekonomii!</h2>
-    <h3>Aplikacja powstała jako jedna z pierwszych na rynku programów edukacyjnych aplikacji służących do inwestowania w papiery wartościowe. Jest też pierwszym tego typu programem obsługującym indeksy GPW</h3>
   </div>
   <div class="form">
     <h1>O Twórcy</h1>

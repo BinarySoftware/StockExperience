@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <title>Zaloguj</title>
   <?php include 'css/css.html'; ?>
 </head>
@@ -24,12 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 ?>
 <body>
   <div class="form">
-      <table width=100%>
-        <tr>
-            <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
-            <td><h1>StockExperience Poland</h1></td> 
-        </tr>
-      </table>
+    <table width=100%>
+      <tr>
+          <td width=110px><img src="icon.png"/ style="width:100px;height:100px;"></td>
+          <td><h1>StockExperience</h1></td> 
+      </tr>
+    </table>
+    </br>
+    <h2>Witamy pasjonatów ekonomii!</h2>
+    <h3>StockExperience to program edukacyjny, uczący inwestowania w papiery wartościowe. Jest też pierwszą aplikacją obsługującą indeksy GPW. Zapraszam do gry!</h3>
+  </div>
+  <div class="form">
       <ul class="tab-group">
         <li class="tab"><a href="#signup">Zarejestruj</a></li>
         <li class="tab active"><a href="#login">Zaloguj</a></li>
@@ -60,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           <div class="top-row">
             <div class="field-wrap">
               <label>
-				Imię<span class="req">*</span>
+                Imię<span class="req">*</span>
               </label>
               <input type="text" required autocomplete="off" name='firstname' />
             </div>
@@ -79,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           </div>
           <div class="field-wrap">
             <label>
-			Hasło<span class="req">*</span>
+              Hasło<span class="req">*</span>
             </label>
             <input type="password"required autocomplete="off" name='password'/>
           </div>
@@ -88,8 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           </form>
         </div>  
       </div>
-</div> 
+  </div> 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="js/index.js"></script>
+  <script src="js/index.js"></script>
+  <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2018 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
 </body>
 </html>
