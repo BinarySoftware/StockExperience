@@ -18,11 +18,13 @@
   </div>
   <div class="form">
     <h1>Jak używać StockExperience</h1>
-    <h3>Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</h3>
-    <h3>Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</h3>
-    <h3>Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</h3>
-    <h3>Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</h3>
-    <h3>Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</h3>
+    </br>
+    <p style="margin:0; text-align:left">Po rejestracji i aktywacji konta zobaczysz listę wszystkich dostępnych indeksów</p>
+    <p style="margin:0; text-align:left">Znajdziesz tam: Nazwę indeksu, jego cenę, zmianę procentową, ostatnią aktualizacje i posiadaną przez ciebie ilość</p>
+    <p style="margin:0; text-align:left">Aby indeks kupić/sprzedać należy w ramce przy nim podać ilość którą chcemy obrócić i kliknąć odpowiedni przycisk</p>
+    <p style="margin:0; text-align:left">Aplikacja automatycznie sprawdzi czy możemy wykonać daną transakcje i jeśli tak, zmieni odpowiednie wartości</p>
+    <p style="margin:0; text-align:left">Po kliknięciu na nazwę indeksu zostaniemy przekierowani na stronę ze szczegółowymi informacjami dotyczącymi jego</p>
+    </br>
     <h2>Jak widać, używanie aplikacji nie jest skomplikowane. Zatem - do roboty!</h2>
   </div>
   <div class="form">
