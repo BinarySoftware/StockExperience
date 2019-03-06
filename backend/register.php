@@ -17,11 +17,10 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mys
 if ( $result->num_rows > 0 ) {
     $_SESSION['message'] = 'Uzytkownik z takim mailem już istnieje!';
     echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
-}
-else { 
+} else { 
     // active is 0 by DEFAULT
     //Small forloop to make mainteneance easier in case of changes in stock indexes
-    $indexes = ["KGH","PKO","PKN","PZU","JSW","CCC","DNP","CDR","LTS","ALR","TPE","PEO","SAN","PGN","GNB","ENG","PGE","ENA","EUR","KRU","PKP","LPP","PLY","MIL","CPS","OPL","MBK","EAT","BMC","VST","GTC","BFT","MRB","11B","MAB","EURPLN","CHFPLN","USDPLN","GBPPLN"];
+    $indexes = ["KGH","PKO","PKN","PZU","JSW","CCC","DNP","CDR","LTS","ALR","TPE","PEO","SAN","PGN","GNB","ENG","PGE","ENA","EUR","KRU","PKP","LPP","PLY","MIL","CPS","OPL","MBK","EAT","BMC","VST","GTC","BFT","MRB","11B","MAB","EURPLN","CHFPLN","USDPLN","GBPPLN"]; //indexes we want to use from GPW
     $listIndexValue = "";
     $lastElement = end($indexes);
     foreach ($indexes as &$index) {
@@ -32,15 +31,15 @@ else {
             $listIndexValue .= "-0,";
         }
     }
+    //sql query to add user to app
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash, money, action_qty_dict) " 
     . "VALUES ('$first_name','$last_name','$email','$password','$hash','100000','$listIndexValue')";
 
-    // Add user to the database
-    if ( $mysqli->query($sql) ){
+    if ( $mysqli->query($sql) ) {
         $_SESSION['active'] = 0; //0 until user activates their account with verify.php
         $_SESSION['logged_in'] = true; // So we know the user has logged in
         $_SESSION['message'] = "Link weryfikacyjny wysłany na: $email, prosimy o weryfikacje przez kliknięcie w link!";
-        // Send registration confirmation link (verify.php)
+        // Send registration confirmation link (verify.php) via email
         $to = $email;
         $subject = 'Weryfikacja konta ( StockExperience )';
         $message_body = '
@@ -50,7 +49,7 @@ else {
         https://stockexperiencepl.000webhostapp.com/backend/verify.php?email='.$email.'&hash='.$hash;  
         mail( $to, $subject, $message_body );
         echo "<script type='text/javascript'> document.location = '../profile.php'; </script>";
-    } else {
+    } else { //if anything has gone wrongs
         $_SESSION['message'] = 'Błąd rejestracji!';
         echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }

@@ -12,12 +12,10 @@ session_start();
 </head>
 <?php
 //Check request method and prepare for registering and logging in
-if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-{
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['login'])) { 
         require 'backend/login.php';
-    }
-    elseif (isset($_POST['register'])) {
+    } elseif (isset($_POST['register'])) {
         require 'backend/register.php';
     }
 }

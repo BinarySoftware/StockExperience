@@ -15,8 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message'] = "Hasło pomyślnie wyzerowane!";
         echo "<script type='text/javascript'> document.location = '../success.php'; </script>";
         }
-    }
-    else {
+    } else {
         $_SESSION['message'] = "Hasła się nie zgadzają!";
         echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }
