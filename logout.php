@@ -1,3 +1,13 @@
+<!-- 
+  logout.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Logging out user, giving feedback
+-->
+
 <?php
 /* Log out process, unsets and destroys session variables */
 session_start();

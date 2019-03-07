@@ -1,7 +1,14 @@
+<!--
+  verify.html
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Verifies registered user email, the link to this page is included in the email from register.php 
+-->
+
 <?php 
-/* Verifies registered user email, the link to this page
-   is included in the register.php email message 
-*/
 require 'db.php';
 session_start();
 // Make sure email and hash variables aren't empty

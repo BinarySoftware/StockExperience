@@ -1,3 +1,13 @@
+<!--
+  debug.html
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Methods for debugging app, not crucial to functioning
+-->
+
 <?php
 
 // using this method to log small bits of data to the console while debugging

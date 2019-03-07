@@ -1,3 +1,13 @@
+<!-- 
+  reset.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Form for resetting forgotten password, after clicking on appropriate link with UUID
+-->
+
 <?php
 require 'backend/resetBackend.php';
 ?>
@@ -14,18 +24,14 @@ require 'backend/resetBackend.php';
           <h1>Podaj nowe hasło</h1>
           <form action="backend/reset_password.php" method="post">
           <div class="field-wrap">
-            <label>
-              Nowe hasło<span class="req">*</span>
-            </label>
+            <label>Nowe hasło<span class="req">*</span></label>
             <input type="password"required name="newpassword" autocomplete="off"/>
           </div>
           <div class="field-wrap">
-            <label>
-              Potwierdź Nowe hasło<span class="req">*</span>
-            </label>
+            <label>Potwierdź Nowe hasło<span class="req">*</span></label>
             <input type="password"required name="confirmpassword" autocomplete="off"/>
           </div>
-          <!-- This input field is needed, to get the email of the user from db, but we dont want user to change anything -->
+          <!-- This input field is needed, to get the email and hash of the user from db, but we dont want user to change and break anything -->
           <input type="hidden" name="email" value="<?= $email ?>">    
           <input type="hidden" name="hash" value="<?= $hash ?>">    
           <button class="button button-block"/>Potwierdź</button>

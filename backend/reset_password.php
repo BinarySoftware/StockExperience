@@ -1,5 +1,14 @@
+<!--
+  reset_password.html
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Backend part of reset.php
+-->
+
 <?php
-/* Password reset process, updates database with new user password */
 require 'db.php';
 session_start();
 // Make sure the form is being submitted with method="post"

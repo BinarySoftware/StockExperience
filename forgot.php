@@ -1,3 +1,13 @@
+<!-- 
+  forgot.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Give user possibility to reset forgotten password provided correct e-mail
+-->
+
 <?php
 require 'backend/forgotBackend.php';
 ?>

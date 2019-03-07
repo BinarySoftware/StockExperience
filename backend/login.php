@@ -1,3 +1,13 @@
+<!--
+  login.html
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Backend part for logging in user
+-->
+
 <?php
 // Escape email to protect against SQL injections
 $email = $mysqli->escape_string($_POST['email']);

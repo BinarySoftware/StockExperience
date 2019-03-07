@@ -1,3 +1,13 @@
+<!-- 
+  index.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Start page, providing users with possibility to login and register
+-->
+
 <?php
 require 'backend/db.php';
 session_start();
@@ -11,7 +21,6 @@ session_start();
   <?php include 'css/css.html'; ?>
 </head>
 <?php
-//Check request method and prepare for registering and logging in
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['login'])) { 
         require 'backend/login.php';

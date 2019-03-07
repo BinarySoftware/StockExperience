@@ -1,5 +1,15 @@
+<!-- 
+  success.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Model for giving positive feedback to user
+-->
+
 <?php
-/* Displays all successful messages */
+// open session, fetch data
 session_start();
 ?>
 
