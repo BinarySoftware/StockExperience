@@ -64,6 +64,7 @@ require 'backend/profileBackend.php';
           $name = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[0];
           $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
           $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
+          
           $color = "red";
           if ($change >= 0) {
             $color = "lightgreen";
@@ -116,7 +117,7 @@ require 'backend/profileBackend.php';
     </table>
   </div>
     <div class="form">
-      <h1>Podsumowanie twojej gry od początku</h1>
+      <h1>Podsumowanie postępów od początku gry</h1>
       <?php
         echo '<p style="margin-bottom: 20px">Na początku miałeś 100 000 zł</p>';
         $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
@@ -125,7 +126,7 @@ require 'backend/profileBackend.php';
           <h3>Graj tak dalej!</h3>';
         } else {
           echo '<p style="margin-bottom: 20px">Dotychczas straciłeś '.(floor(($totalMoney-100000) * -100) / 100).', co przekłada się na spadek o '.((floor(($totalMoney-100000) * 100) / 100)/1000).'%</p>
-          <h3>Zmień taktykę!</h3>';
+          <h3>Zmień taktykę, badaj rynek</h3>';
         }
       ?>
     </div>
@@ -149,6 +150,6 @@ require 'backend/profileBackend.php';
    }
     </script>
     <script src="js/index.js"></script>
-    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2018 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
+    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2019 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
   </body>
 </html>

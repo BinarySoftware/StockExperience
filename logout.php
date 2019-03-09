@@ -24,7 +24,7 @@ session_destroy();
 </head>
 <body>
     <div class="form">
-          <h1>Dziękujemy za korzystanie</h1>
+          <h1>Dziękujemy za skorzystanie z aplikacji i zapraszamy ponownie</h1>
           <p><?= 'Wylogowano pomyślnie!'; ?></p>
           <a href="index.php"><button class="button button-block"/>Start</button></a>
     </div>
