@@ -70,35 +70,15 @@ if ( $_SESSION['logged_in'] != 1 ) {
                 $actions_dict = implode(",", $actions_ar);
                 $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
                 if ( $mysqli->query($sql) ) {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Pomyslnie zakupiono akcje</h3>
-                            </div>
-                          </div>";
+                  createModal("Pomyślnie zakupiono akcje");
                 } else {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
-                            </div>
-                          </div>";
+                  createModal("Problem z serwerem, transakcja odrzucona");
                 }
             } else {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Za mało środków na koncie, transakcja odrzucona</h3>
-                            </div>
-                          </div>";
+              createModal("Za mało środków na koncie, transakcja odrzucona");
                 }
         } else {
-            echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                    <div class=\"modal-content\">
-                      <span class=\"close\">x</span>
-                      <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>
-                    </div>
-                  </div>";
+          createModal("Brak wartości podanej w okienku");
         }
       //sell index
       } elseif ( isset( $_GET[$index[0].'s'] ) ) {
@@ -111,39 +91,29 @@ if ( $_SESSION['logged_in'] != 1 ) {
                 $actions_dict = implode(",", $actions_ar);
                 $sql = "UPDATE users SET money='$money', action_qty_dict='$actions_dict' WHERE email='$email'";
                 if ( $mysqli->query($sql) ) {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Pomyslnie sprzedano akcje</h3>
-                            </div>
-                          </div>";
+                  createModal("Pomyślnie sprzedano posiadane akcje");
                 } else {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Problem z serwerem, transakcja odrzucona</h3>
-                            </div>
-                          </div>";
+                  createModal("Problem z serwerem, transakcja odrzucona");
                 }
             } else {
-                    echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">   
-                            <div class=\"modal-content\">
-                              <span class=\"close\">x</span>
-                              <h3 style='color:#000000'>Za mało akcji, transakcja odrzucona</h3>
-                            </div>
-                          </div>";
+              createModal("Za mało posiadanych akcji, transakcja odrzucona");
                 }
         } else {
-            echo "<!DOCTYPE html><div id=\"ActionSendWindow\", class=\"modal\">                
-                    <div class=\"modal-content\">
-                      <span class=\"close\">x</span>
-                      <h3 style='color:#000000'>Brak wartosci podanej w okienku</h3>
-                    </div>
-                  </div>";
+          createModal("Brak wartości podanej w okienku");
       }
     }
     //recalculate wallet
     $totalMoneyInStocks += floatval($price)*floatval($index[1]);
   }
 }
+
+function createModal( $message ) {
+  echo '<!DOCTYPE html><div id="ActionSendWindow", class="modal">   
+                            <div class="modal-content">
+                              <span class="close">x</span>
+                              <h3 style="color:#010101">'.$message.'</h3>
+                            </div>
+                          </div>';
+}
+
 ?>
