@@ -2,6 +2,16 @@
 require 'backend/profileBackend.php';
 ?>
 
+<!-- 
+  profile.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: The main page of the app, displaying profile, user data, container of stockKit
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,13 +38,13 @@ require 'backend/profileBackend.php';
       </tr>
     </table>
         <?php 
-        // Display message about account verification link only once, Don't annoy the user with more messages upon page refresh
+        // Display message about account verification 
+        // Keep reminding the user this account is not active, until they activate
         if ( isset($_SESSION['message']) )
         {
             echo $_SESSION['message'];
             unset( $_SESSION['message'] );
         }
-        // Keep reminding the user this account is not active, until they activate
         if ( !$active ){
             echo
             '<div class="info">
@@ -54,6 +64,7 @@ require 'backend/profileBackend.php';
           $name = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[0];
           $price = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[1];
           $change = explode(PHP_EOL, $aDataTableHeaderHTML[$key])[2];
+          
           $color = "red";
           if ($change >= 0) {
             $color = "lightgreen";
@@ -69,6 +80,8 @@ require 'backend/profileBackend.php';
             $quantityAndMoneyInIndex = 'Masz: '.$quantityOFIndexes;
           }
           
+          // Frontend part - prepare and display data as it should be displayed
+
           echo '<tr>
             <td style="color:#fafafa; width:8%"><a href="https://www.biznesradar.pl/notowania/'.$name.'">'.$name.'</a></td>';
           if ($key == 0) {
@@ -104,7 +117,7 @@ require 'backend/profileBackend.php';
     </table>
   </div>
     <div class="form">
-      <h1>Podsumowanie twojej gry od początku</h1>
+      <h1>Podsumowanie postępów od początku gry</h1>
       <?php
         echo '<p style="margin-bottom: 20px">Na początku miałeś 100 000 zł</p>';
         $totalMoney = (floor($money * 100) / 100) + (floor($totalMoneyInStocks * 100) / 100);
@@ -113,29 +126,22 @@ require 'backend/profileBackend.php';
           <h3>Graj tak dalej!</h3>';
         } else {
           echo '<p style="margin-bottom: 20px">Dotychczas straciłeś '.(floor(($totalMoney-100000) * -100) / 100).', co przekłada się na spadek o '.((floor(($totalMoney-100000) * 100) / 100)/1000).'%</p>
-          <h3>Zmień taktykę!</h3>';
+          <h3>Zmień taktykę, badaj rynek</h3>';
         }
       ?>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
     // Script for running the pop-up informing about buying/selling
-    // Get the modal
     var modal = document.getElementById('ActionSendWindow');
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    // Check if modal exists
     if (modal != null) {
       modal.style.display = "block";
-  
-      // When the user clicks on <span> (x), close the modal
       span.onclick = function() {
           modal.style.display = "none";
       }
 
-      // When the user clicks anywhere outside of the modal, close it
       window.onclick = function(event) {
           if (event.target == modal) {
               modal.style.display = "none";
@@ -144,6 +150,6 @@ require 'backend/profileBackend.php';
    }
     </script>
     <script src="js/index.js"></script>
-    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2018 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
+    <h5 style="color:rgba(19, 35, 47, 0.9)">StockExperience <a href="https://github.com/BinarySoftware" style="color:rgba(19, 35, 47, 0.9)">Ⓒ2019 BinarySoftware</a> Wszelkie prawa zastrzeżone.</h5>
   </body>
 </html>

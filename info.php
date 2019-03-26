@@ -1,3 +1,13 @@
+<!-- 
+  info.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Display information about site, development progress, creator, data source etc.
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +47,7 @@
   </div>
   <div class="form">
     <h1>Changelog</h1>
+    <h4>2(GM) (06.03) - Testowanie, zmiany w layoucie kodu, drobne poprawki, dokumentacja</h4>
     <h4>2(B6) (10.12) - Zmiany w stronie informacyjnej i logowania, poprawki w stylach, testy pre-release, SEO</h4>
     <h4>2(B5) (07.12) - Performance: 53x mniejszy plik, 7,3x szybsze ładowanie, dodane narzędzia deweloperskie</h4>
     <h4>2(B4) (04.12) - Poprawa logo, oddzielenie backendu od frontendu, podsumowanie poczynań, refaktoryzacja, Regulamin</h4>

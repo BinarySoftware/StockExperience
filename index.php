@@ -3,6 +3,16 @@ require 'backend/db.php';
 session_start();
 ?>
 
+<!-- 
+  index.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Start page, providing users with possibility to login and register
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +21,10 @@ session_start();
   <?php include 'css/css.html'; ?>
 </head>
 <?php
-//Check request method and prepare for registering and logging in
-if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-{
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['login'])) { 
         require 'backend/login.php';
-    }
-    elseif (isset($_POST['register'])) {
+    } elseif (isset($_POST['register'])) {
         require 'backend/register.php';
     }
 }

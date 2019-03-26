@@ -2,6 +2,16 @@
 session_start();
 ?>
 
+<!-- 
+  error.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Model for giving negative feedback to user in case of unexpected behavior
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +24,6 @@ session_start();
     <h1>Błąd</h1>
     <p>
     <?php 
-    //If there is possibility to write message, do it, else get back to start page
     if( isset($_SESSION['message']) AND !empty($_SESSION['message']) ): 
         echo $_SESSION['message'];    
     else:

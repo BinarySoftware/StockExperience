@@ -5,6 +5,16 @@ session_unset();
 session_destroy(); 
 ?>
 
+<!-- 
+  logout.php
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Logging out user, giving feedback
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +24,7 @@ session_destroy();
 </head>
 <body>
     <div class="form">
-          <h1>Dziękujemy za korzystanie</h1>
+          <h1>Dziękujemy za skorzystanie z aplikacji i zapraszamy ponownie</h1>
           <p><?= 'Wylogowano pomyślnie!'; ?></p>
           <a href="index.php"><button class="button button-block"/>Start</button></a>
     </div>

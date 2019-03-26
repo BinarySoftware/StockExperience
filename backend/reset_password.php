@@ -1,7 +1,19 @@
 <?php
-/* Password reset process, updates database with new user password */
 require 'db.php';
 session_start();
+?>
+
+<!--
+  reset_password.html
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Backend part of reset.php
+-->
+
+<?php
 // Make sure the form is being submitted with method="post"
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
     // Make sure the two passwords match
@@ -15,8 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message'] = "Hasło pomyślnie wyzerowane!";
         echo "<script type='text/javascript'> document.location = '../success.php'; </script>";
         }
-    }
-    else {
+    } else {
         $_SESSION['message'] = "Hasła się nie zgadzają!";
         echo "<script type='text/javascript'> document.location = '../error.php'; </script>";
     }

@@ -1,3 +1,13 @@
+/*
+  index.js
+  StockExperience
+
+  Edited by BinarySoftware on 07/03/2019.
+  Copyright ©2019 BinarySoftware/Maciej Mikołajek. All rights reserved.
+
+  Purpose: Functions for performing animations on appropriate elements
+*/
+
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   var $this = $(this),
       label = $this.prev('label');
