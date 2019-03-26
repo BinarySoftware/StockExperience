@@ -1,3 +1,7 @@
+<?php
+require 'backend/profileBackend.php';
+?>
+
 <!-- 
   profile.php
   StockExperience
@@ -7,10 +11,6 @@
 
   Purpose: The main page of the app, displaying profile, user data, container of stockKit
 -->
-
-<?php
-require 'backend/profileBackend.php';
-?>
 
 <!DOCTYPE html>
 <html>

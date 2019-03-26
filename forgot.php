@@ -1,3 +1,7 @@
+<?php
+require 'backend/forgotBackend.php';
+?>
+
 <!-- 
   forgot.php
   StockExperience
@@ -7,10 +11,6 @@
 
   Purpose: Give user possibility to reset forgotten password provided correct e-mail
 -->
-
-<?php
-require 'backend/forgotBackend.php';
-?>
 
 <!DOCTYPE html>
 <html>

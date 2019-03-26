@@ -1,3 +1,8 @@
+<?php
+require 'db.php';
+session_start();
+?>
+
 <!--
   reset_password.html
   StockExperience
@@ -9,8 +14,6 @@
 -->
 
 <?php
-require 'db.php';
-session_start();
 // Make sure the form is being submitted with method="post"
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
     // Make sure the two passwords match

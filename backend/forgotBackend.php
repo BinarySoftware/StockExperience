@@ -1,3 +1,8 @@
+<?php
+require 'db.php';
+session_start();
+?>
+
 <!--
   forgotBackend.html
   StockExperience
@@ -9,9 +14,6 @@
 -->
 
 <?php
-require 'db.php';
-session_start();
-
 // this page is used in order to help users in case they have forgotten their password
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {   
     $email = $mysqli->escape_string($_POST['email']);

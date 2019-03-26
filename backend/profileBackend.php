@@ -1,3 +1,9 @@
+<?php
+error_reporting(0);
+require 'db.php';
+session_start();
+?>
+
 <!--
   profileBackend.html
   StockExperience
@@ -9,10 +15,6 @@
 -->
 
 <?php
-error_reporting(0);
-require 'db.php';
-session_start();
-
 // Check if user is logged in using the session variable
 if ( $_SESSION['logged_in'] != 1 ) {
     $_SESSION['message'] = "Nie wyświetlimy danych bez zalogowania!";

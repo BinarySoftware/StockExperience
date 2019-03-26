@@ -1,3 +1,7 @@
+<?php
+require 'backend/resetBackend.php';
+?>
+
 <!-- 
   reset.php
   StockExperience
@@ -7,10 +11,6 @@
 
   Purpose: Form for resetting forgotten password, after clicking on appropriate link with UUID
 -->
-
-<?php
-require 'backend/resetBackend.php';
-?>
 
 <!DOCTYPE html>
 <html >

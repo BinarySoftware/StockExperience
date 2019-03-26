@@ -1,3 +1,10 @@
+<?php
+/* Log out process, unsets and destroys session variables */
+session_start();
+session_unset();
+session_destroy(); 
+?>
+
 <!-- 
   logout.php
   StockExperience
@@ -7,13 +14,6 @@
 
   Purpose: Logging out user, giving feedback
 -->
-
-<?php
-/* Log out process, unsets and destroys session variables */
-session_start();
-session_unset();
-session_destroy(); 
-?>
 
 <!DOCTYPE html>
 <html>

@@ -1,3 +1,8 @@
+<?php
+// open session, fetch data
+session_start();
+?>
+
 <!-- 
   success.php
   StockExperience
@@ -7,11 +12,6 @@
 
   Purpose: Model for giving positive feedback to user
 -->
-
-<?php
-// open session, fetch data
-session_start();
-?>
 
 <!DOCTYPE html>
 <html>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!-- 
   error.php
   StockExperience
@@ -7,10 +11,6 @@
 
   Purpose: Model for giving negative feedback to user in case of unexpected behavior
 -->
-
-<?php
-session_start();
-?>
 
 <!DOCTYPE html>
 <html>

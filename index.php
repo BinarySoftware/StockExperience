@@ -1,3 +1,8 @@
+<?php
+require 'backend/db.php';
+session_start();
+?>
+
 <!-- 
   index.php
   StockExperience
@@ -7,11 +12,6 @@
 
   Purpose: Start page, providing users with possibility to login and register
 -->
-
-<?php
-require 'backend/db.php';
-session_start();
-?>
 
 <!DOCTYPE html>
 <html>
