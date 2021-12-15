@@ -1,5 +1,5 @@
 <?php
-require 'backend/db.php';
+// require 'backend/db.php';
 session_start();
 ?>
 
