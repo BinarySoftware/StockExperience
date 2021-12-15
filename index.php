@@ -1,7 +1,7 @@
-<!-- <?php
+<?php
 require 'backend/db.php';
 session_start();
-?> -->
+?>
 
 <!-- 
   index.php
@@ -12,7 +12,7 @@ session_start();
 
   Purpose: Start page, providing users with possibility to login and register
 -->
-
+<? echo "foo" ?>
 <!DOCTYPE html>
 <html>
 <head>
