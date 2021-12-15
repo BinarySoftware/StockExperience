@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 require 'backend/db.php';
 session_start();
-?>
+?> -->
 
 <!-- 
   index.php
